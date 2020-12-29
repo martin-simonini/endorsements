@@ -1,0 +1,7 @@
+.studentInfo{
+  text-align: left;
+  display: inline;
+}
+.input, .label {
+  display:block;
+}
