@@ -5,14 +5,20 @@ import { saveAs } from 'file-saver';
 import './App.css';
 
 class App extends Component {
-  state = {
-    studentName:'(First Name, MI, Last name)_________________________',
-    gender: '[he or she]'
-  }
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            studentName:'(First Name, MI, Last name)_________________________',
+            gender: '[he or she]'
+        }
+    }
 
     handleChange = ({target: {value,name}}) =>
     {
-        console.log("value: "+value+", name: "+name);
+        if(name === 'studentName' && value === ''){
+            this.setState({studentName: '(First Name, MI, Last name)_________________________'});
+        }
         this.setState({[name]: value});
     }
 

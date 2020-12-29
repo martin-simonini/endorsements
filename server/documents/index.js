@@ -1,4 +1,4 @@
-module.exports = ({studentName}, {gender}) => {
+module.exports = ({studentName, gender}) => {
     const today = new Date();
 
     let a1 = `
