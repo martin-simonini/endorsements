@@ -1,31 +1,47 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { saveAs } from 'file-saver';
-
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import moment from 'moment';
 
 import './App.css';
 
 import StudentInfo from './components/StudentInfo';
+import InstructorInfo from "./components/InstructorInfo";
 
 class App extends Component {
+
 
     constructor(props) {
         super(props);
         this.state = {
             studentName:'(First Name, MI, Last name)_________________________',
-            gender: '[he or she]'
+            gender: '[he or she]',
+            cfiNumber: '',
+            expDate: '',
+            signedDate: '',
         }
     }
 
     handleChange = ({target: {value,name}}) =>
     {
-        console.log("["+name+"]: "+value);
+        // console.log("["+name+"]: "+value);
         if(name === 'studentName' && value === ''){
             this.setState({studentName: '(First Name, MI, Last name)_________________________'});
         }
-        this.setState({[name]: value});
+        else if(name === 'expDate')
+        {
+            this.setState({expDate: moment(value).format("MM/YYYY")});
+        }
+        else if(name === 'signedDate')
+        {
+            this.setState({signedDate: moment(value).format("MM/DD/YYYY")});
+        }
+        else{
+            this.setState({[name]: value});
+        }
     }
 
   createAndDownloadPdf = () => {
@@ -50,6 +66,9 @@ class App extends Component {
                     <Row>
                         <Col md={6}>
                             <StudentInfo handleChange={this.handleChange}/>
+                        </Col>
+                        <Col md={6}>
+                            <InstructorInfo handleChange={this.handleChange}/>
                         </Col>
                     </Row>
                     <Row>

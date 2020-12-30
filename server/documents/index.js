@@ -1,4 +1,4 @@
-module.exports = ({studentName, gender}) => {
+module.exports = ({studentName, gender, cfiNumber, expDate, signedDate}) => {
     const today = new Date();
 
     let a1 = `
@@ -20,10 +20,10 @@ module.exports = ({studentName, gender}) => {
             </td>
         </tr>
         <tr>
-            <td class="signature">Signed <input type="text" class="signature_block" size="26"/> Date <input type="text" class="date_block" size="12"/> </td>
+            <td class="signature">Signed <input type="text" class="signature_block" size="26"/> Date <input type="text" class="date_block" size="12" value="${signedDate}" /> </td>
         </tr>
         <tr>
-            <td class="signature">CFI No. <input type="text" class="signature_block" size="15" /> Exp. Date <input type="text" class="date_block" size="12" /> </td>
+            <td class="signature">CFI No. <input type="text" class="signature_block" size="15" value="${cfiNumber}"/> Exp. Date <input type="text" class="date_block" size="12" value="${expDate}" /> </td>
         </tr>
     </table>`;
 
