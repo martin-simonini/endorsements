@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { saveAs } from 'file-saver';
 
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './App.css';
+
+import StudentInfo from './components/StudentInfo';
 
 class App extends Component {
 
@@ -16,6 +21,7 @@ class App extends Component {
 
     handleChange = ({target: {value,name}}) =>
     {
+        console.log("["+name+"]: "+value);
         if(name === 'studentName' && value === ''){
             this.setState({studentName: '(First Name, MI, Last name)_________________________'});
         }
@@ -35,20 +41,23 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <h1>Create Endorsements</h1> <br />
-                <div className="studentInfo">
-                    <h2>Student Information</h2>
-                    <label htmlFor="studentName" className="label">Student's Name</label>
-                    <input type="text" placeholder="John J. Doe" name="studentName" onChange={this.handleChange} className="input"/>
-                    <label htmlFor="gender">Gender: </label>
-
-                    <select name="gender" onChange={this.handleChange}>
-                        <option  value="[he or she]"></option>
-                        <option value="he">Male</option>
-                        <option value="she">Female</option>
-                    </select>
-                </div><br />
-                <button onClick={this.createAndDownloadPdf}>Download PDF</button>
+                <Container>
+                    <Row>
+                        <Col md={12}>
+                            <h1 className="basic-info-title">Basic Information</h1>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={6}>
+                            <StudentInfo handleChange={this.handleChange}/>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={12}>
+                            <Button onClick={this.createAndDownloadPdf}>Download PDF</Button>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
         );
     }
