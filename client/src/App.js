@@ -23,6 +23,7 @@ class App extends Component {
             cfiNumber: '',
             expDate: '',
             signedDate: '',
+            endorsements: []
         }
     }
 
@@ -43,6 +44,13 @@ class App extends Component {
         else{
             this.setState({[name]: value});
         }
+    }
+
+    addEndorsement = ({target: {value,name}}) =>{
+        // console.log("["+name+"]: "+value);
+        /*this.setState(prevState => ({
+            endorsements: [...prevState.endorsements, newEndorsement],
+        }));*/
     }
 
   createAndDownloadPdf = () => {
@@ -83,7 +91,7 @@ class App extends Component {
                     </Row>
                     <Row>
                         <Col md={12}>
-                            <EndorsementSelection />
+                            <EndorsementSelection addEndorsement={this.addEndorsement}/>
                         </Col>
                     </Row>
                 </Container>

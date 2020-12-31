@@ -19,5 +19,5 @@ export const categories = [
 
 export const generic_endorsements = [
     {name: "Prerequisites for practical test", id: "A1"},
-    {name: "Review of deficiencies identified on airman knowledge test:", id: "A2"}
+    {name: "Review of deficiencies identified on airman knowledge test", id: "A2"}
 ]

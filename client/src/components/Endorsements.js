@@ -1,22 +1,31 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import {  generic_endorsements } from './resources/Endorsment_Data';
+import {categories, generic_endorsements} from './resources/Endorsment_Data';
+import {ChevronDoubleDown, ChevronDoubleRight} from "react-bootstrap-icons";
 
 class Endorsements extends Component{
 
-    state = {
-        generic : generic_endorsements
-    }
+
 
     render() {
+        if(this.props.category === "GENERIC")
+        {
+            return(
+                <>
+                    {generic_endorsements.map((end, index) => (
+                       <Form.Check name={end.id} label={end.name} onChange={this.props.addEndorsement} />
+                    ))}
+                </>
+            );
+        }
+
+
+
         return(
             <>
-                <Button>Hello</Button>
-                {this.state.generic.forEach(e => {
-                    <Button>{e.name}</Button>
-                })}
+
             </>
         );
     }

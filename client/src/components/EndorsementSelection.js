@@ -79,7 +79,7 @@ class EndorsementSelection extends Component{
                             </CustomToggle>
                             <Accordion.Collapse eventKey={(index+1)}>
                                 <Card.Body>
-                                    <Endorsements category={cat} />
+                                    <Endorsements category={cat} addEndorsement={this.props.addEndorsement}/>
                                 </Card.Body>
                             </Accordion.Collapse>
                         </Card>
