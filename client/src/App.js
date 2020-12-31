@@ -46,13 +46,20 @@ class App extends Component {
         }
     }
 
-    addEndorsement = ({target: {value,name}}) =>{
-        // console.log("["+name+"]: "+value);
-        /*this.setState(prevState => ({
-            endorsements: [...prevState.endorsements, newEndorsement],
-        }));*/
+    addEndorsements = (end) =>{
+        const newArr = this.state.endorsements.concat(end);
+        this.setState({endorsements: newArr});
     }
 
+
+    removeEndorsements = (end) =>{
+        end.toString().split(",").forEach(i => {
+            this.setState(prevState => ({
+                endorsements: prevState.endorsements.filter(item => item != i)
+            }));
+        })
+
+    }
   createAndDownloadPdf = () => {
     axios.post('/create-pdf', this.state)
         .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
@@ -62,6 +69,8 @@ class App extends Component {
           saveAs(pdfBlob, 'newPdf.pdf');
         })
   }
+
+  test = () =>{console.log("Endorsements: "+this.state.endorsements);}
 
     render() {
         return (
@@ -91,13 +100,14 @@ class App extends Component {
                     </Row>
                     <Row>
                         <Col md={12}>
-                            <EndorsementSelection addEndorsement={this.addEndorsement}/>
+                            <EndorsementSelection addEndorsements={this.addEndorsements} removeEndorsements={this.removeEndorsements}/>
                         </Col>
                     </Row>
                 </Container>
                 <Container>
                     <Row>
                         <Col md={12}>
+                            <Button onClick={this.test} variant="primary" size="lg" block>TEST</Button>
                             <Button onClick={this.createAndDownloadPdf} variant="primary" size="lg" block>Generate PDF</Button>
                         </Col>
                     </Row>

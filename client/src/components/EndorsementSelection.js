@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ChevronDoubleRight, ChevronDoubleDown } from 'react-bootstrap-icons';
 
 import Endorsements from "./Endorsements";
-import { categories, generic_endorsements } from './resources/Endorsment_Data';
+import { categories, generic_endorsements } from './resources/Endorsements_Data';
 
 
 function CustomToggle({ children, eventKey, handleClick }) {
@@ -79,7 +79,7 @@ class EndorsementSelection extends Component{
                             </CustomToggle>
                             <Accordion.Collapse eventKey={(index+1)}>
                                 <Card.Body>
-                                    <Endorsements category={cat} addEndorsement={this.props.addEndorsement}/>
+                                    <Endorsements category={cat} addEndorsements={this.props.addEndorsements} removeEndorsements={this.props.removeEndorsements}/>
                                 </Card.Body>
                             </Accordion.Collapse>
                         </Card>
