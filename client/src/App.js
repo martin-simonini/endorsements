@@ -10,6 +10,7 @@ import './App.css';
 
 import StudentInfo from './components/StudentInfo';
 import InstructorInfo from "./components/InstructorInfo";
+import EndorsementSelection from "./components/EndorsementSelection";
 
 class App extends Component {
 
@@ -57,23 +58,39 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                <div className="basicInfo">
+                    <Container>
+                        <Row>
+                            <Col md={12}>
+                                <h1 className="text-center">Basic Information</h1>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col md={6}>
+                                <StudentInfo handleChange={this.handleChange}/>
+                            </Col>
+                            <Col md={6}>
+                                <InstructorInfo handleChange={this.handleChange}/>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
                 <Container>
                     <Row>
                         <Col md={12}>
-                            <h1 className="basic-info-title">Basic Information</h1>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md={6}>
-                            <StudentInfo handleChange={this.handleChange}/>
-                        </Col>
-                        <Col md={6}>
-                            <InstructorInfo handleChange={this.handleChange}/>
+                            <h1 className="text-center">Endorsement Selection</h1>
                         </Col>
                     </Row>
                     <Row>
                         <Col md={12}>
-                            <Button onClick={this.createAndDownloadPdf}>Download PDF</Button>
+                            <EndorsementSelection />
+                        </Col>
+                    </Row>
+                </Container>
+                <Container>
+                    <Row>
+                        <Col md={12}>
+                            <Button onClick={this.createAndDownloadPdf} variant="primary" size="lg" block>Generate PDF</Button>
                         </Col>
                     </Row>
                 </Container>

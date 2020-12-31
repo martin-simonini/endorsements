@@ -43,10 +43,10 @@ module.exports = ({studentName, gender, cfiNumber, expDate, signedDate}) => {
             </td>
         </tr>
         <tr>
-            <td class="signature">Signed <input type="text" class="signature_block" size="26"/> Date <input type="text" class="date_block" size="12"/> </td>
+            <td class="signature">Signed <input type="text" class="signature_block" size="26"/> Date <input type="text" class="date_block" size="12" value="${signedDate}" /> </td>
         </tr>
         <tr>
-            <td class="signature">CFI No. <input type="text" class="signature_block" size="15" /> Expiration Date <input type="text" class="date_block" size="12" /> </td>
+            <td class="signature">CFI No. <input type="text" class="signature_block" size="15" value="${cfiNumber}"/> Exp. Date <input type="text" class="date_block" size="12" value="${expDate}" /> </td>
         </tr>
     </table>
     `;
@@ -65,11 +65,11 @@ module.exports = ({studentName, gender, cfiNumber, expDate, signedDate}) => {
                 test. <br><br>
             </td>
         </tr>
-        <tr>
-            <td class="signature">Signed <input type="text" class="signature_block" size="26"/> Date <input type="text" class="date_block" size="12"/> </td>
+       <tr>
+            <td class="signature">Signed <input type="text" class="signature_block" size="26"/> Date <input type="text" class="date_block" size="12" value="${signedDate}" /> </td>
         </tr>
         <tr>
-            <td class="signature">CFI No. <input type="text" class="signature_block" size="15" /> Expiration Date <input type="text" class="date_block" size="12" /> </td>
+            <td class="signature">CFI No. <input type="text" class="signature_block" size="15" value="${cfiNumber}"/> Exp. Date <input type="text" class="date_block" size="12" value="${expDate}" /> </td>
         </tr>
     </table>
     `;
@@ -90,11 +90,11 @@ module.exports = ({studentName, gender, cfiNumber, expDate, signedDate}) => {
                 aircraft to be flown. <br><br>
             </td>
         </tr>
-        <tr>
-            <td class="signature">Signed <input type="text" class="signature_block" size="26"/> Date <input type="text" class="date_block" size="12"/> </td>
+       <tr>
+            <td class="signature">Signed <input type="text" class="signature_block" size="26"/> Date <input type="text" class="date_block" size="12" value="${signedDate}" /> </td>
         </tr>
         <tr>
-            <td class="signature">CFI No. <input type="text" class="signature_block" size="15" /> Expiration Date <input type="text" class="date_block" size="12" /> </td>
+            <td class="signature">CFI No. <input type="text" class="signature_block" size="15" value="${cfiNumber}"/> Exp. Date <input type="text" class="date_block" size="12" value="${expDate}" /> </td>
         </tr>
     </table>
     `;
@@ -117,10 +117,10 @@ module.exports = ({studentName, gender, cfiNumber, expDate, signedDate}) => {
             </td>
         </tr>
         <tr>
-            <td class="signature">Signed <input type="text" class="signature_block" size="26"/> Date <input type="text" class="date_block" size="12"/> </td>
+            <td class="signature">Signed <input type="text" class="signature_block" size="26"/> Date <input type="text" class="date_block" size="12" value="${signedDate}" /> </td>
         </tr>
         <tr>
-            <td class="signature">CFI No. <input type="text" class="signature_block" size="15" /> Expiration Date <input type="text" class="date_block" size="12" /> </td>
+            <td class="signature">CFI No. <input type="text" class="signature_block" size="15" value="${cfiNumber}"/> Exp. Date <input type="text" class="date_block" size="12" value="${expDate}" /> </td>
         </tr>
     </table>
     `;
@@ -139,11 +139,11 @@ module.exports = ({studentName, gender, cfiNumber, expDate, signedDate}) => {
                 and is proficient to make solo flights in [make and model]. <br><br>
             </td>
         </tr>
-        <tr>
-            <td class="signature">Signed <input type="text" class="signature_block" size="26"/> Date <input type="text" class="date_block" size="12"/> </td>
+       <tr>
+            <td class="signature">Signed <input type="text" class="signature_block" size="26"/> Date <input type="text" class="date_block" size="12" value="${signedDate}" /> </td>
         </tr>
         <tr>
-            <td class="signature">CFI No. <input type="text" class="signature_block" size="15" /> Expiration Date <input type="text" class="date_block" size="12" /> </td>
+            <td class="signature">CFI No. <input type="text" class="signature_block" size="15" value="${cfiNumber}"/> Exp. Date <input type="text" class="date_block" size="12" value="${expDate}" /> </td>
         </tr>
     </table>
     `;
@@ -164,10 +164,10 @@ module.exports = ({studentName, gender, cfiNumber, expDate, signedDate}) => {
             </td>
         </tr>
         <tr>
-            <td class="signature">Signed <input type="text" class="signature_block" size="26"/> Date <input type="text" class="date_block" size="12"/> </td>
+            <td class="signature">Signed <input type="text" class="signature_block" size="26"/> Date <input type="text" class="date_block" size="12" value="${signedDate}" /> </td>
         </tr>
         <tr>
-            <td class="signature">CFI No. <input type="text" class="signature_block" size="15" /> Expiration Date <input type="text" class="date_block" size="12" /> </td>
+            <td class="signature">CFI No. <input type="text" class="signature_block" size="15" value="${cfiNumber}"/> Exp. Date <input type="text" class="date_block" size="12" value="${expDate}" /> </td>
         </tr>
     </table>
     `;
@@ -189,10 +189,10 @@ module.exports = ({studentName, gender, cfiNumber, expDate, signedDate}) => {
             </td>
         </tr>
         <tr>
-            <td class="signature">Signed <input type="text" class="signature_block" size="26"/> Date <input type="text" class="date_block" size="12"/> </td>
+            <td class="signature">Signed <input type="text" class="signature_block" size="26"/> Date <input type="text" class="date_block" size="12" value="${signedDate}" /> </td>
         </tr>
         <tr>
-            <td class="signature">CFI No. <input type="text" class="signature_block" size="15" /> Expiration Date <input type="text" class="date_block" size="12" /> </td>
+            <td class="signature">CFI No. <input type="text" class="signature_block" size="15" value="${cfiNumber}"/> Exp. Date <input type="text" class="date_block" size="12" value="${expDate}" /> </td>
         </tr>
     </table>
     `;

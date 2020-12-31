@@ -15,14 +15,14 @@ class StudentInfo extends Component{
                     </Form.Group>
                     <Form.Group as={Row} controlId="studentInfo">
                         <Form.Label column sm="5">Student's Name: </Form.Label>
-                        <Col sm="7">
+                        <Col sm="6">
                             <Form.Control type="text" name="studentName" onChange={this.props.handleChange} placeholder="John J. Doe" />
                         </Col>
                     </Form.Group>
 
                     <Form.Group controlId="Gender" as={Row}>
                         <Form.Label column sm="5">Gender: </Form.Label>
-                        <Col sm="5">
+                        <Col sm="3">
                             <Form.Control as="select" name="gender" onChange={this.props.handleChange}>
                                 <option  value="[he or she]"></option>
                                 <option value="he">Male</option>
