@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import {categories, generic_endorsements} from './resources/Endorsements_Data';
+import {generic_endorsements, tsa_endorsement, student_pilot_endorsements} from './resources/Endorsements_Data';
 
 class Endorsements extends Component{
 
@@ -27,7 +27,7 @@ class Endorsements extends Component{
 
              //changing state
              this.setState(prevState => ({
-                 checked: prevState.checked.filter(item => item != name),
+                 checked: prevState.checked.filter(item => item !== name),
                  selected: tempSelected,
              }));
 
@@ -55,7 +55,7 @@ class Endorsements extends Component{
      */
     findIndex = (name) =>{
         let index = -1;
-        let filteredObj = this.state.endorsement_pool.find(function(item, i){
+        this.state.endorsement_pool.find(function(item, i){
             if(item.id === name){
                 index = i;
                 return i;
@@ -69,15 +69,22 @@ class Endorsements extends Component{
       * This should only happen once on creation.
      */
     setEndorsementPool = (cat) =>{
-        if(cat === "GENERIC"){
-            //Verify endorsement_pool is not already set. May want to use something more robust than JSON.Stringify
-            if(JSON.stringify(generic_endorsements) !== JSON.stringify(this.state.endorsement_pool)){
-                let temp = [];
-                generic_endorsements.forEach(i => {
-                    temp.push(false);
-                })
-                this.setState({endorsement_pool: generic_endorsements, selected: temp});
-            }
+        let newPool = [];
+
+        if(cat === "GENERIC")
+            newPool = generic_endorsements;
+        else if(cat === "TRANSPORTATION SECURITY ADMINISTRATION (TSA) ENDORSEMENT")
+            newPool = tsa_endorsement;
+        else if(cat === "STUDENT PILOT ENDORSEMENTS")
+            newPool = student_pilot_endorsements;
+
+        //Verify endorsement_pool is not already set. May want to use something more robust than JSON.Stringify
+        if(JSON.stringify(newPool) !== JSON.stringify(this.state.endorsement_pool)){
+            let temp = [];
+            newPool.forEach(() => {
+                temp.push(false);
+            })
+            this.setState({endorsement_pool: newPool, selected: temp});
         }
     }
 
@@ -105,7 +112,7 @@ class Endorsements extends Component{
 
         //Set select so user will register all checkbox's selected/unselected.
         let tempSelected = [];
-        this.state.selected.forEach(i => tempSelected.push(!this.state.disableAll));
+        this.state.selected.forEach(() => tempSelected.push(!this.state.disableAll));
 
         //Change state
         this.setState(prevState => ({
