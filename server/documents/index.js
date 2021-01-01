@@ -1,20 +1,25 @@
+const getCount = (array, item) =>{
+    let count = 0;
+    for(let i = 0; i < array.length; ++i){
+        if(array[i] === item)
+            count++;
+    }
+    return count;
+}
+
 module.exports = ({studentName, gender, cfiNumber, expDate, signedDate, endorsements}) => {
 
     const generic = require("./resources/generic_endorsements");
     const student_pilot = require("./resources/student_pilot_endorsements");
 
     return `
-            <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
         table{
-            /*max-width: 800px;*/
-            /*margin: auto;*/
-            /*padding: 30px;*/
-            /*font-family: "Times New Roman", Times, serif;*/
             max-width: 375px;
             height: 250px;
             margin: 5px 0px 5px 0px;
@@ -53,16 +58,36 @@ module.exports = ({studentName, gender, cfiNumber, expDate, signedDate, endorsem
     </style>
 </head>
 <body>
-${endorsements.includes("A1")? generic.A1({studentName, gender, signedDate, cfiNumber, expDate}):""}
-${endorsements.includes("A2")? generic.A2({studentName, gender, signedDate, cfiNumber, expDate}):""}
-${endorsements.includes("A3")? student_pilot.A3({studentName, signedDate, cfiNumber, expDate}):""}
-${endorsements.includes("A4")? student_pilot.A4({studentName, gender, signedDate, cfiNumber, expDate}):""}
-${endorsements.includes("A5")? student_pilot.A5({studentName, signedDate, cfiNumber, expDate}):""}
-${endorsements.includes("A6")? student_pilot.A6({studentName, gender, signedDate, cfiNumber, expDate}):""}
-${endorsements.includes("A7")? student_pilot.A7({studentName, gender, signedDate, cfiNumber, expDate}):""}
-${endorsements.includes("A8")? student_pilot.A8({studentName, gender, signedDate, cfiNumber, expDate}):""}
 
+${Array(getCount(endorsements,"A1")).join(0).split(0).map(() => `
+    ${endorsements.includes("A1")? generic.A1({studentName, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A2")).join(0).split(0).map(() => `
+    ${endorsements.includes("A2")? generic.A2({studentName, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A3")).join(0).split(0).map(() => `
+    ${endorsements.includes("A3")? student_pilot.A3({studentName, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A4")).join(0).split(0).map(() => `
+    ${endorsements.includes("A4")? student_pilot.A4({studentName, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A5")).join(0).split(0).map(() => `
+    ${endorsements.includes("A5")? student_pilot.A5({studentName, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A6")).join(0).split(0).map(() => `
+    ${endorsements.includes("A6")? student_pilot.A6({studentName, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A7")).join(0).split(0).map(() => `
+    ${endorsements.includes("A7")? student_pilot.A7({studentName, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A8")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A8")? student_pilot.A8({studentName, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
 
-    `;
+</body>
+</html>
+`;
 };
+
+
 

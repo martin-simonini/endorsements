@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca7c9b1-ae6c-45f4-873d-1850cd05a937" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Endorsements.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/documents/resources/generic_endorsements.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/documents/resources/student_pilot_endorsements.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/documents/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/result.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/server/result.pdf" afterDir="false" />
     </list>
@@ -65,7 +60,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609529443736</updated>
-      <workItem from="1609529446689" duration="8837000" />
+      <workItem from="1609529446689" duration="10479000" />
     </task>
     <task id="LOCAL-00001" summary="rewrote the setEndorsementPool method and added to the more endorsements.">
       <created>1609533432792</created>
@@ -74,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609533432792</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Now able to select what endorsements will be presented in the PDF. Also redid the document generation file.">
+      <created>1609544124432</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609544124432</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,6 +95,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="rewrote the setEndorsementPool method and added to the more endorsements." />
-    <option name="LAST_COMMIT_MESSAGE" value="rewrote the setEndorsementPool method and added to the more endorsements." />
+    <MESSAGE value="Now able to select what endorsements will be presented in the PDF. Also redid the document generation file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Now able to select what endorsements will be presented in the PDF. Also redid the document generation file." />
   </component>
 </project>
