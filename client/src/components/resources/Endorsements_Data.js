@@ -1,3 +1,4 @@
+
 export const categories = [
     "GENERIC",
     "TRANSPORTATION SECURITY ADMINISTRATION (TSA) ENDORSEMENT",
@@ -39,4 +40,24 @@ export const student_pilot_endorsements = [
 
 export const tsa_endorsement = [
     {name: "Endorsement of U.S. citizenship recommended by the Transportation Security Administration (TSA): Title 49 of the Code of Federal Regulations (49 CFR) § 1552.3(h).", id: "A14"}
+]
+
+export const aircraft = [
+    "A4",
+    "A6",
+    "A7",
+    "A9",
+]
+
+export const airport = [
+    "A5",
+    "A8",
+]
+
+export const limitations = [
+    "A8",
+]
+
+export const aircraft_category = [
+    "A9"
 ]

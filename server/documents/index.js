@@ -21,12 +21,12 @@ module.exports = ({studentName, gender, cfiNumber, expDate, signedDate, endorsem
     <style>
         table{
             max-width: 375px;
-            height: 250px;
-            margin: 5px 0px 5px 0px;
+            height: 120px;
+            margin: 5px 2px 5px 2px;
             padding: 5px;
             border: 1px solid #eee;
-            font-size: 16px;
-            line-height: 24px;
+            font-size: 10px;
+            line-height: 14px;
             font-family: "Times New Roman", Times, serif;,
              color: #555;
             display: inline-block;
@@ -46,6 +46,7 @@ module.exports = ({studentName, gender, cfiNumber, expDate, signedDate, endorsem
             font-size: 0.8em;
         }
         .signature_block {
+            width: 100px;
             border: 0;
             border-bottom: 1px solid #000;
             padding-right: 20px;

@@ -10,7 +10,8 @@ class Endorsements extends Component{
         endorsement_pool: [], //current list of endorsements from Endorsements_Data
         checked: [], //List of endorsements that are selected
         selected: [], //Array of booleans where true means selected, false otherwise
-        disableAll: false //Disables checkbox when user hits "select all"
+        disableAll: false, //Disables checkbox when user hits "select all"
+        displayAdditionalInfo: false //Set true when the user has selected an endorsement to additional options are displayed.
     }
 
     /*
@@ -33,6 +34,7 @@ class Endorsements extends Component{
 
              //pushing change to App.js
              this.props.removeEndorsements(name);
+             this.updateDisplay(false);
          }
          else //Adding new item
          {
@@ -47,6 +49,7 @@ class Endorsements extends Component{
 
              //pushing change to App.js
              this.props.addEndorsements(name);
+             this.updateDisplay(true);
          }
     }
 
@@ -105,9 +108,11 @@ class Endorsements extends Component{
                 temp = temp.filter(item => item !== i);
             })
             this.props.addEndorsements(temp);
+            this.updateDisplay(true);
         }
         else{ //User wants to deselect all
             this.props.removeEndorsements(temp);
+            this.updateDisplay(false);
         }
 
         //Set select so user will register all checkbox's selected/unselected.
@@ -119,6 +124,31 @@ class Endorsements extends Component{
             disableAll: !prevState.disableAll,
             selected: tempSelected
         }));
+    }
+
+    /*
+     * This method will update the additional options sections. This way the user is only presented with data fields
+     * pertaining to the the endorsements they chose.
+     */
+    updateDisplay = (adding) =>{
+        /* Since the setState is asynchronous we can get into a state that the last endorsement has been deselected but
+           checked has not updated (same thing is true for adding the first end.). The two first if statements take care
+           of this issue.
+         */
+        if(this.state.checked.length === 0 && adding){
+            this.props.updateAdditionalInfo({cat: this.props.category, newValue: true});
+            this.setState({displayAdditionalInfo: true});
+        }else if(this.state.checked.length === 1 && !adding){
+            this.props.updateAdditionalInfo({cat: this.props.category, newValue: false});
+            this.setState({displayAdditionalInfo: false});
+        }
+        else if(this.state.checked.length === 0 && this.state.displayAdditionalInfo) {
+            this.props.updateAdditionalInfo({cat: this.props.category, newValue: false});
+            this.setState({displayAdditionalInfo: false});
+        }else if( this.state.checked.length > 0 && !this.state.displayAdditionalInfo){
+            this.props.updateAdditionalInfo({cat: this.props.category, newValue: true});
+            this.setState({displayAdditionalInfo: true});
+        }
     }
 
     render() {

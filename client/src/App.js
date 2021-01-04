@@ -8,12 +8,13 @@ import moment from 'moment';
 
 import './App.css';
 
+import { categories } from './components/resources/Endorsements_Data';
 import StudentInfo from './components/StudentInfo';
 import InstructorInfo from "./components/InstructorInfo";
 import EndorsementSelection from "./components/EndorsementSelection";
+import GenericAdditionalInfo from "./components/GenericAdditionalInfo";
 
 class App extends Component {
-
 
     constructor(props) {
         super(props);
@@ -23,7 +24,8 @@ class App extends Component {
             cfiNumber: '',
             expDate: '',
             signedDate: '',
-            endorsements: []
+            endorsements: [],
+            displayAddInfo: new Array(categories.length).fill(false)
         }
     }
 
@@ -60,6 +62,13 @@ class App extends Component {
         })
 
     }
+
+    updateAdditionalInfo = ({cat,newValue}) =>{
+        let newAddInfo = this.state.displayAddInfo;
+        let index = categories.findIndex(i => cat === i);
+        newAddInfo[index] = newValue;
+        this.setState({displayAdditionalInfo: newAddInfo});
+    }
   createAndDownloadPdf = () => {
     axios.post('/create-pdf', this.state)
         .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
@@ -70,7 +79,7 @@ class App extends Component {
         })
   }
 
-  test = () =>{console.log("Endorsements: "+this.state.endorsements);}
+  test = () =>{console.log("Endorsements: "+this.state.endorsements);console.log("DisplayValue: "+this.state.displayAddInfo)}
 
     render() {
         return (
@@ -92,7 +101,7 @@ class App extends Component {
                         </Row>
                     </Container>
                 </div>
-                <Container>
+                <Container className="endorsement_selection_container">
                     <Row>
                         <Col md={12}>
                             <h1 className="text-center">Endorsement Selection</h1>
@@ -100,14 +109,21 @@ class App extends Component {
                     </Row>
                     <Row>
                         <Col md={12}>
-                            <EndorsementSelection addEndorsements={this.addEndorsements} removeEndorsements={this.removeEndorsements}/>
+                            <EndorsementSelection addEndorsements={this.addEndorsements} removeEndorsements={this.removeEndorsements} updateAdditionalInfo={this.updateAdditionalInfo}/>
                         </Col>
                     </Row>
                 </Container>
                 <Container>
                     <Row>
                         <Col md={12}>
-                            <Button onClick={this.test} variant="primary" size="lg" block>TEST</Button>
+                            <GenericAdditionalInfo display={this.state.displayAddInfo[0]}/>
+                        </Col>
+                    </Row>
+                </Container>
+                <Container>
+                    <Row>
+                        <Col md={12}>
+                            {/*<Button onClick={this.test}>Test</Button>*/}
                             <Button onClick={this.createAndDownloadPdf} variant="primary" size="lg" block>Generate PDF</Button>
                         </Col>
                     </Row>

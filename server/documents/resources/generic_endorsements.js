@@ -1,5 +1,5 @@
 
-//TODO: Add Applicable test
+
 const A1 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
     return `
     <table class="floatLeft">
@@ -15,19 +15,18 @@ const A1 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
             <td class="endorsement_text">
                 I certify that ${studentName} has received and logged training time within
                 2 calendar-months preceding the month of application in preparation for the practical test
-                and ${gender} is prepared for the required practical test for the issuance of [applicable]
+                and ${gender} is prepared for the required practical test for the issuance of _________________________
                 certificate. <br>
             </td>
         </tr>
         <tr>
-            <td class="signature">Signed <input type="text" class="signature_block" size="26"/> Date <input type="text" class="date_block" size="12" value="${signedDate}" /> </td>
+            <td class="signature">Signed <input type="text" class="signature_block" /> Date <input type="text" class="date_block" size="12" value="${signedDate}" /> </td>
         </tr>
         <tr>
             <td class="signature">CFI No. <input type="text" class="signature_block" size="15" value="${cfiNumber}"/> Exp. Date <input type="text" class="date_block" size="12" value="${expDate}" /> </td>
         </tr>
     </table>`}
 
-//TODO: Add Applicable test
 const A2 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
     return`
     <table class="floatLeft">
@@ -40,7 +39,7 @@ const A2 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
         <tr>
             <td class="endorsement_text">
                 I certify that ${studentName} has demonstrated satisfactory knowledge of the
-                subject areas in which ${gender} was deficient on the [applicable] airman knowledge
+                subject areas in which ${gender} was deficient on the _________________________ airman knowledge
                 test. <br><br>
             </td>
         </tr>

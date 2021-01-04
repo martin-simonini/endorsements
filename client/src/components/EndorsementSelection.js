@@ -21,25 +21,9 @@ function CustomToggle({ children, eventKey, handleClick }) {
 
 
 class EndorsementSelection extends Component{
-// {name: '', id: , cat: ''},
-    /*state = {
-        options:[
-            {name: 'Prerequisites for practical test', id: 1, cat: 'Generic'},
-            {name: 'Review of deficiencies identified on airman knowledge test', id: 2, cat: 'Generic'},
-            {name: 'Pre-solo aeronautical knowledge: § 61.87(b)', id: 3, cat: 'Student Pilot'},
-            {name: 'Pre-solo flight training: § 61.87(c)(1) and (2).', id:4 , cat: 'Student Pilot'},
-            {name: 'Solo flight (first 90 calendar-day period): § 61.87(n)', id:4 , cat: 'Student Pilot'},
-        ],
-        selectedValues: []
-    }*/
 
     constructor(props) {
         super(props);
-        /*const data = [
-            { name: "mike", age: 22 },
-            { name: "clive", age: 25 },
-            { name: "morgan", age: 82 }
-        ];*/
         this.state = {
             activeKey: null,
             data: [
@@ -79,7 +63,11 @@ class EndorsementSelection extends Component{
                             </CustomToggle>
                             <Accordion.Collapse eventKey={(index+1)}>
                                 <Card.Body>
-                                    <Endorsements category={cat} addEndorsements={this.props.addEndorsements} removeEndorsements={this.props.removeEndorsements}/>
+                                    <Endorsements category={cat}
+                                                  addEndorsements={this.props.addEndorsements}
+                                                  removeEndorsements={this.props.removeEndorsements}
+                                                  updateAdditionalInfo={this.props.updateAdditionalInfo}
+                                    />
                                 </Card.Body>
                             </Accordion.Collapse>
                         </Card>
