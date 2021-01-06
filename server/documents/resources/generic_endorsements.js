@@ -1,6 +1,6 @@
 
 
-const A1 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
+const A1 = ({studentName, gender, generic_info, signedDate, cfiNumber, expDate}) => {
     return `
     <table class="floatLeft">
         <tr>
@@ -15,7 +15,7 @@ const A1 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
             <td class="endorsement_text">
                 I certify that ${studentName} has received and logged training time within
                 2 calendar-months preceding the month of application in preparation for the practical test
-                and ${gender} is prepared for the required practical test for the issuance of _________________________
+                and ${gender} is prepared for the required practical test for the issuance of ${generic_info[0]}
                 certificate. <br>
             </td>
         </tr>
@@ -27,7 +27,7 @@ const A1 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
         </tr>
     </table>`}
 
-const A2 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
+const A2 = ({studentName, gender, generic_info, signedDate, cfiNumber, expDate}) => {
     return`
     <table class="floatLeft">
         <tr>
@@ -39,7 +39,7 @@ const A2 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
         <tr>
             <td class="endorsement_text">
                 I certify that ${studentName} has demonstrated satisfactory knowledge of the
-                subject areas in which ${gender} was deficient on the _________________________ airman knowledge
+                subject areas in which ${gender} was deficient on the ${generic_info[1]} airman knowledge
                 test. <br><br>
             </td>
         </tr>

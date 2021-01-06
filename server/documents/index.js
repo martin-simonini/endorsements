@@ -7,7 +7,7 @@ const getCount = (array, item) =>{
     return count;
 }
 
-module.exports = ({studentName, gender, cfiNumber, expDate, signedDate, endorsements}) => {
+module.exports = ({studentName, gender, cfiNumber, expDate, signedDate, endorsements, generic_info}) => {
 
     const generic = require("./resources/generic_endorsements");
     const student_pilot = require("./resources/student_pilot_endorsements");
@@ -59,12 +59,11 @@ module.exports = ({studentName, gender, cfiNumber, expDate, signedDate, endorsem
     </style>
 </head>
 <body>
-
 ${Array(getCount(endorsements,"A1")).join(0).split(0).map(() => `
-    ${endorsements.includes("A1")? generic.A1({studentName, gender, signedDate, cfiNumber, expDate}):""}
+    ${endorsements.includes("A1")? generic.A1({studentName, gender , generic_info, signedDate, cfiNumber, expDate}):""}
   `).join('')}
 ${Array(getCount(endorsements,"A2")).join(0).split(0).map(() => `
-    ${endorsements.includes("A2")? generic.A2({studentName, gender, signedDate, cfiNumber, expDate}):""}
+    ${endorsements.includes("A2")? generic.A2({studentName, gender, generic_info, signedDate, cfiNumber, expDate}):""}
   `).join('')}
 ${Array(getCount(endorsements,"A3")).join(0).split(0).map(() => `
     ${endorsements.includes("A3")? student_pilot.A3({studentName, signedDate, cfiNumber, expDate}):""}

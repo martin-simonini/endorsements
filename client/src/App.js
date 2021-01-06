@@ -25,13 +25,14 @@ class App extends Component {
             expDate: '',
             signedDate: '',
             endorsements: [],
-            displayAddInfo: new Array(categories.length).fill(false)
+            displayAddInfo: new Array(categories.length).fill(false),
+            generic_info: ['________________________','________________________']
         }
     }
 
     handleChange = ({target: {value,name}}) =>
     {
-        // console.log("["+name+"]: "+value);
+         console.log("["+name+"]: "+value);
         if(name === 'studentName' && value === ''){
             this.setState({studentName: '(First Name, MI, Last name)_________________________'});
         }
@@ -46,6 +47,10 @@ class App extends Component {
         else{
             this.setState({[name]: value});
         }
+    }
+
+    handleProcessedChange = ({value,name}) =>{
+        this.setState({[name]: value});
     }
 
     addEndorsements = (end) =>{
@@ -79,7 +84,7 @@ class App extends Component {
         })
   }
 
-  test = () =>{console.log("Endorsements: "+this.state.endorsements);console.log("DisplayValue: "+this.state.displayAddInfo)}
+  test = () =>{console.log("Endorsements: "+this.state.endorsements);console.log("generic_info: "+this.state.generic_info)}
 
     render() {
         return (
@@ -116,7 +121,7 @@ class App extends Component {
                 <Container>
                     <Row>
                         <Col md={12}>
-                            <GenericAdditionalInfo display={this.state.displayAddInfo[0]}/>
+                            <GenericAdditionalInfo display={this.state.displayAddInfo[0]} handleChange={this.handleProcessedChange} endorsements={this.state.endorsements}/>
                         </Col>
                     </Row>
                 </Container>

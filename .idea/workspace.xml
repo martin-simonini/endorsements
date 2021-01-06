@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca7c9b1-ae6c-45f4-873d-1850cd05a937" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/GenericAdditionalInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/EndorsementSelection.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/EndorsementSelection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Endorsements.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Endorsements.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/resources/Endorsements_Data.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/resources/Endorsements_Data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/GenericAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GenericAdditionalInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/documents/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/documents/resources/generic_endorsements.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/resources/generic_endorsements.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/result.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/server/result.pdf" afterDir="false" />
@@ -67,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609529443736</updated>
-      <workItem from="1609529446689" duration="20056000" />
+      <workItem from="1609529446689" duration="30292000" />
     </task>
     <task id="LOCAL-00001" summary="rewrote the setEndorsementPool method and added to the more endorsements.">
       <created>1609533432792</created>
@@ -90,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609545493325</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Began the additional information for the endorsements. Added the functionality that the additional information will appear only when the appropriate endorsements are selected.">
+      <created>1609787162378</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609787162378</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +116,7 @@
     <MESSAGE value="rewrote the setEndorsementPool method and added to the more endorsements." />
     <MESSAGE value="Now able to select what endorsements will be presented in the PDF. Also redid the document generation file." />
     <MESSAGE value="Server can print several of the same endorsement." />
-    <option name="LAST_COMMIT_MESSAGE" value="Server can print several of the same endorsement." />
+    <MESSAGE value="Began the additional information for the endorsements. Added the functionality that the additional information will appear only when the appropriate endorsements are selected." />
+    <option name="LAST_COMMIT_MESSAGE" value="Began the additional information for the endorsements. Added the functionality that the additional information will appear only when the appropriate endorsements are selected." />
   </component>
 </project>
