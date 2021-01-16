@@ -61,3 +61,5 @@ export const limitations = [
 export const aircraft_category = [
     "A9"
 ]
+
+export const FULL_PAGE = 12;

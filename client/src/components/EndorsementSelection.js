@@ -26,12 +26,6 @@ class EndorsementSelection extends Component{
         super(props);
         this.state = {
             activeKey: null,
-            data: [
-                { name: "test", age: 18},
-                { name: "mike", age: 22 },
-                { name: "clive", age: 25 },
-                { name: "morgan", age: 82 }
-            ]
         }
     }
 
@@ -63,11 +57,16 @@ class EndorsementSelection extends Component{
                             </CustomToggle>
                             <Accordion.Collapse eventKey={(index+1)}>
                                 <Card.Body>
-                                    <Endorsements category={cat}
-                                                  addEndorsements={this.props.addEndorsements}
-                                                  removeEndorsements={this.props.removeEndorsements}
-                                                  updateAdditionalInfo={this.props.updateAdditionalInfo}
-                                    />
+                                    <div>
+                                        <Endorsements category={cat}
+                                                      addEndorsements={this.props.addEndorsements}
+                                                      removeEndorsements={this.props.removeEndorsements}
+                                                      updateAdditionalInfo={this.props.updateAdditionalInfo}
+                                        />
+                                    </div>
+                                    <div>
+
+                                    </div>
                                 </Card.Body>
                             </Accordion.Collapse>
                         </Card>

@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import moment from 'moment';
 
-import './App.css';
+import './css/App.css';
 
 import { categories } from './components/resources/Endorsements_Data';
 import StudentInfo from './components/StudentInfo';
@@ -32,7 +32,7 @@ class App extends Component {
 
     handleChange = ({target: {value,name}}) =>
     {
-         console.log("["+name+"]: "+value);
+         // console.log("["+name+"]: "+value);
         if(name === 'studentName' && value === ''){
             this.setState({studentName: '(First Name, MI, Last name)_________________________'});
         }

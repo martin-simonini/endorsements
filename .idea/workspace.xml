@@ -2,15 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca7c9b1-ae6c-45f4-873d-1850cd05a937" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/RepeatEndorsement.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/css/Endorsements.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/css/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/GenericAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/GenericAdditionalInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/documents/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/documents/resources/generic_endorsements.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/resources/generic_endorsements.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/result.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/server/result.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/EndorsementSelection.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/EndorsementSelection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Endorsements.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Endorsements.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/resources/Endorsements_Data.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/resources/Endorsements_Data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,18 +46,10 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\Projects\Endorsements\client\src\css" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -65,7 +59,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609529443736</updated>
-      <workItem from="1609529446689" duration="30292000" />
+      <workItem from="1609529446689" duration="32914000" />
+      <workItem from="1610157298950" duration="600000" />
+      <workItem from="1610322461408" duration="2487000" />
+      <workItem from="1610676026785" duration="4080000" />
+      <workItem from="1610734936784" duration="8360000" />
     </task>
     <task id="LOCAL-00001" summary="rewrote the setEndorsementPool method and added to the more endorsements.">
       <created>1609533432792</created>
@@ -95,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609787162378</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Additional information for the generic endorsements will be passed to the PDF.">
+      <created>1609952294938</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609952294938</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,12 +116,15 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="rewrote the setEndorsementPool method and added to the more endorsements." />
     <MESSAGE value="Now able to select what endorsements will be presented in the PDF. Also redid the document generation file." />
     <MESSAGE value="Server can print several of the same endorsement." />
     <MESSAGE value="Began the additional information for the endorsements. Added the functionality that the additional information will appear only when the appropriate endorsements are selected." />
-    <option name="LAST_COMMIT_MESSAGE" value="Began the additional information for the endorsements. Added the functionality that the additional information will appear only when the appropriate endorsements are selected." />
+    <MESSAGE value="Additional information for the generic endorsements will be passed to the PDF." />
+    <MESSAGE value="Began working on the repeat functionality." />
+    <option name="LAST_COMMIT_MESSAGE" value="Began working on the repeat functionality." />
   </component>
 </project>

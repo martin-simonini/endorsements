@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
-import { Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import { Form, Container, Row, Col } from 'react-bootstrap';
+
+import './../css/Endorsements.css';
+
 import {generic_endorsements, tsa_endorsement, student_pilot_endorsements} from './resources/Endorsements_Data';
+import RepeatEndorsement from "./RepeatEndorsement";
+
 
 class Endorsements extends Component{
 
@@ -11,7 +16,7 @@ class Endorsements extends Component{
         checked: [], //List of endorsements that are selected
         selected: [], //Array of booleans where true means selected, false otherwise
         disableAll: false, //Disables checkbox when user hits "select all"
-        displayAdditionalInfo: false //Set true when the user has selected an endorsement to additional options are displayed.
+        displayAdditionalInfo: false, //Set true when the user has selected an endorsement to additional options are displayed.
     }
 
     /*
@@ -53,6 +58,25 @@ class Endorsements extends Component{
          }
     }
 
+    addMultipleOfSameEndorsement = (num, id) =>{
+        let current = this.getCount(id);
+        // console.log("num: "+num+", id: "+id+", cl: "+current.length);
+        if(current.length < num){
+            let newArr = this.state.checked;
+            for(let i = 0; i < (num - current.length); i++){
+                newArr.push(id);
+            }
+            console.log(newArr);
+            /*this.setState({checked: newArr});
+
+            //pushing change to App.js
+            this.props.addEndorsements(name);
+            this.updateDisplay(true);*/
+        }
+
+        //add remove the number necessary to get to num
+    }
+
     /*
      * Find the index of a endorsement in the endorsement_pool (and selected) array
      */
@@ -64,6 +88,16 @@ class Endorsements extends Component{
                 return i;
             }
         });
+        return index;
+    }
+
+    getCount = id =>{
+        let index = [];
+        for(let i = 0; i < this.state.checked.length; i++){
+            if(this.state.checked[i] === id){
+                index.push(i);
+            }
+        }
         return index;
     }
 
@@ -151,15 +185,28 @@ class Endorsements extends Component{
         }
     }
 
+
     render() {
         this.setEndorsementPool(this.props.category);
 
+
             return(
                 <>
-                    <Form.Check label="Select All" onChange={this.selectAll} />
-                    {this.state.endorsement_pool.map((end, index) => (
-                       <Form.Check name={end.id} label={end.name} onChange={this.changeSelected} disabled={this.state.disableAll} checked={this.state.selected[index]} />
-                    ))}
+                    <Container>
+                        <Row className="shadow-lg  border endorsementCard">
+                            <Form.Check label="Select All" onChange={this.selectAll} />
+                        </Row>
+                        {this.state.endorsement_pool.map((end, index) => (
+                            <Row className="shadow-lg  border  endorsementCard">
+                                <Col>
+                                    <Form.Check name={end.id} label={end.name} onChange={this.changeSelected} disabled={this.state.disableAll} checked={this.state.checked.includes(end.id)} />
+                                </Col>
+                                <Col className={this.state.selected[index]?"visible":"invisible"}>
+                                    <RepeatEndorsement endorsement={end} add={this.addMultipleOfSameEndorsement}/>
+                                </Col>
+                            </Row>
+                        ))}
+                    </Container>
                 </>
             );
     }

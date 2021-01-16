@@ -1,0 +1,16 @@
+.endorsementCard{
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    /*display: inline;*/
+
+}
+
+.visible{
+    visibility: visible;
+}
+
+.invisible{
+    visibility: hidden;
+}
+
+
