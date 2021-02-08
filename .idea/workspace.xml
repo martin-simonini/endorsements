@@ -2,17 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca7c9b1-ae6c-45f4-873d-1850cd05a937" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/RepeatEndorsement.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/css/Endorsements.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/css/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/EndorsementSelection.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/EndorsementSelection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Endorsements.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Endorsements.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/resources/Endorsements_Data.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/resources/Endorsements_Data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/EndorsementSelection.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/endorsement_selection/EndorsementSelection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Endorsements.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/endorsement_selection/Endorsements.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/GenericAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/GenericAdditionalInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/InstructorInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/people_information/InstructorInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/RepeatEndorsement.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/endorsement_selection/RepeatEndorsement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/StudentInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/people_information/StudentInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/css/Endorsements.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/css/Endorsements.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/result.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/server/result.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +48,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\Projects\Endorsements\client\src\components\people_information" />
+      <recent name="C:\Users\User\Desktop\Projects\Endorsements\client\src\components\endorsement_selection" />
+      <recent name="C:\Users\User\Desktop\Projects\Endorsements\client\src\components\additional_information" />
+      <recent name="C:\Users\User\Desktop\Projects\Endorsements\client\src\components" />
       <recent name="C:\Users\User\Desktop\Projects\Endorsements\client\src\css" />
     </key>
   </component>
@@ -63,7 +67,14 @@
       <workItem from="1610157298950" duration="600000" />
       <workItem from="1610322461408" duration="2487000" />
       <workItem from="1610676026785" duration="4080000" />
-      <workItem from="1610734936784" duration="8360000" />
+      <workItem from="1610734936784" duration="10760000" />
+      <workItem from="1610822749614" duration="4381000" />
+      <workItem from="1611200376045" duration="1752000" />
+      <workItem from="1612675883702" duration="1763000" />
+      <workItem from="1612746147548" duration="1400000" />
+      <workItem from="1612747665358" duration="6356000" />
+      <workItem from="1612757495127" duration="487000" />
+      <workItem from="1612810907778" duration="4725000" />
     </task>
     <task id="LOCAL-00001" summary="rewrote the setEndorsementPool method and added to the more endorsements.">
       <created>1609533432792</created>
@@ -100,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609952294938</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Began working on the repeat functionality.">
+      <created>1610755564505</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1610755564505</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

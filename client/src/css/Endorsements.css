@@ -13,4 +13,12 @@
     visibility: hidden;
 }
 
+.hidden{
+    display: none;
+}
+
+.shown{
+    display: inherit;
+}
+
 

@@ -3,9 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Form, Container, Row, Col } from 'react-bootstrap';
 
-import './../css/Endorsements.css';
+import '../../css/Endorsements.css';
 
-import {generic_endorsements, tsa_endorsement, student_pilot_endorsements} from './resources/Endorsements_Data';
+import {generic_endorsements, tsa_endorsement, student_pilot_endorsements} from '../resources/Endorsements_Data';
 import RepeatEndorsement from "./RepeatEndorsement";
 
 
@@ -13,8 +13,6 @@ class Endorsements extends Component{
 
     state = {
         endorsement_pool: [], //current list of endorsements from Endorsements_Data
-        checked: [], //List of endorsements that are selected
-        selected: [], //Array of booleans where true means selected, false otherwise
         disableAll: false, //Disables checkbox when user hits "select all"
         displayAdditionalInfo: false, //Set true when the user has selected an endorsement to additional options are displayed.
     }
@@ -24,34 +22,14 @@ class Endorsements extends Component{
      */
     changeSelected = ({target: {name}}) =>{
          // console.log("Name: "+name);
-         if(this.state.checked.includes(name))//Removing selected item
+         if(this.props.endorsements.includes(name))//Removing selected item
          {
-             //changing boolean variable in selected var.
-             let tempSelected = [...this.state.selected];
-             let index = this.findIndex(name);
-             tempSelected[index] = !tempSelected[index];
-
-             //changing state
-             this.setState(prevState => ({
-                 checked: prevState.checked.filter(item => item !== name),
-                 selected: tempSelected,
-             }));
-
              //pushing change to App.js
              this.props.removeEndorsements(name);
              this.updateDisplay(false);
          }
          else //Adding new item
          {
-             //changing boolean variable in selected var.
-             let tempSelected = [...this.state.selected];
-             let index = this.findIndex(name);
-             tempSelected[index] = !tempSelected[index];
-
-             //Changing state
-             const newArr = this.state.checked.concat(name);
-             this.setState({checked: newArr, selected: tempSelected});
-
              //pushing change to App.js
              this.props.addEndorsements(name);
              this.updateDisplay(true);
@@ -60,18 +38,24 @@ class Endorsements extends Component{
 
     addMultipleOfSameEndorsement = (num, id) =>{
         let current = this.getCount(id);
-        // console.log("num: "+num+", id: "+id+", cl: "+current.length);
-        if(current.length < num){
-            let newArr = this.state.checked;
-            for(let i = 0; i < (num - current.length); i++){
+        // console.log("current count: "+current+", num: "+num);
+         if(current < num){
+            let newArr = this.props.endorsements;
+            for(let i = 0; i < (num - current); i++){
                 newArr.push(id);
             }
-            console.log(newArr);
-            /*this.setState({checked: newArr});
 
             //pushing change to App.js
-            this.props.addEndorsements(name);
-            this.updateDisplay(true);*/
+            this.props.setEndorsements(newArr);
+        }
+        else if( current > num && num > 0){
+            this.props.removeEndorsements(id);
+            //console.log("props: "+this.props.endorsements);
+            let newArr = this.props.endorsements.filter(i => i !== id);
+            for(let i = 0; i < num; i++){
+                newArr.push(id);
+            }
+            this.props.setEndorsements(newArr);
         }
 
         //add remove the number necessary to get to num
@@ -87,15 +71,16 @@ class Endorsements extends Component{
                 index = i;
                 return i;
             }
+            return -1;
         });
         return index;
     }
 
     getCount = id =>{
-        let index = [];
-        for(let i = 0; i < this.state.checked.length; i++){
-            if(this.state.checked[i] === id){
-                index.push(i);
+        let index = 0;
+        for(let i = 0; i < this.props.endorsements.length; i++){
+            if(this.props.endorsements[i] === id){
+                index++;
             }
         }
         return index;
@@ -117,11 +102,7 @@ class Endorsements extends Component{
 
         //Verify endorsement_pool is not already set. May want to use something more robust than JSON.Stringify
         if(JSON.stringify(newPool) !== JSON.stringify(this.state.endorsement_pool)){
-            let temp = [];
-            newPool.forEach(() => {
-                temp.push(false);
-            })
-            this.setState({endorsement_pool: newPool, selected: temp});
+            this.setState({endorsement_pool: newPool});
         }
     }
 
@@ -138,7 +119,7 @@ class Endorsements extends Component{
         if(this.state.disableAll === false){ //User wants to select all
             //Have to remove the endorsements that have been already selected so that
             // App.js doesn't have multiple copies.
-            this.state.checked.forEach(i => {
+            this.props.endorsements.forEach(i => {
                 temp = temp.filter(item => item !== i);
             })
             this.props.addEndorsements(temp);
@@ -149,14 +130,10 @@ class Endorsements extends Component{
             this.updateDisplay(false);
         }
 
-        //Set select so user will register all checkbox's selected/unselected.
-        let tempSelected = [];
-        this.state.selected.forEach(() => tempSelected.push(!this.state.disableAll));
 
         //Change state
         this.setState(prevState => ({
-            disableAll: !prevState.disableAll,
-            selected: tempSelected
+            disableAll: !prevState.disableAll
         }));
     }
 
@@ -169,17 +146,17 @@ class Endorsements extends Component{
            checked has not updated (same thing is true for adding the first end.). The two first if statements take care
            of this issue.
          */
-        if(this.state.checked.length === 0 && adding){
+        if(this.props.endorsements.length === 0 && adding){
             this.props.updateAdditionalInfo({cat: this.props.category, newValue: true});
             this.setState({displayAdditionalInfo: true});
-        }else if(this.state.checked.length === 1 && !adding){
+        }else if(this.props.endorsements.length === 1 && !adding){
             this.props.updateAdditionalInfo({cat: this.props.category, newValue: false});
             this.setState({displayAdditionalInfo: false});
         }
-        else if(this.state.checked.length === 0 && this.state.displayAdditionalInfo) {
+        else if(this.props.endorsements.length === 0 && this.state.displayAdditionalInfo) {
             this.props.updateAdditionalInfo({cat: this.props.category, newValue: false});
             this.setState({displayAdditionalInfo: false});
-        }else if( this.state.checked.length > 0 && !this.state.displayAdditionalInfo){
+        }else if( this.props.endorsements.length > 0 && !this.state.displayAdditionalInfo){
             this.props.updateAdditionalInfo({cat: this.props.category, newValue: true});
             this.setState({displayAdditionalInfo: true});
         }
@@ -199,10 +176,20 @@ class Endorsements extends Component{
                         {this.state.endorsement_pool.map((end, index) => (
                             <Row className="shadow-lg  border  endorsementCard">
                                 <Col>
-                                    <Form.Check name={end.id} label={end.name} onChange={this.changeSelected} disabled={this.state.disableAll} checked={this.state.checked.includes(end.id)} />
+                                    <Form.Check
+                                        name={end.id}
+                                        label={end.name}
+                                        onChange={this.changeSelected}
+                                        disabled={this.state.disableAll}
+                                        checked={this.props.endorsements.includes(end.id)}
+                                    />
                                 </Col>
-                                <Col className={this.state.selected[index]?"visible":"invisible"}>
-                                    <RepeatEndorsement endorsement={end} add={this.addMultipleOfSameEndorsement}/>
+                                <Col className={this.props.endorsements.includes(end.id)?"shown":"hidden"}>
+                                    <RepeatEndorsement
+                                        endorsement={end}
+                                        add={this.addMultipleOfSameEndorsement}
+                                        selected={this.props.endorsements.includes(end.id)}
+                                    />
                                 </Col>
                             </Row>
                         ))}

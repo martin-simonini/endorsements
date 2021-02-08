@@ -9,10 +9,10 @@ import moment from 'moment';
 import './css/App.css';
 
 import { categories } from './components/resources/Endorsements_Data';
-import StudentInfo from './components/StudentInfo';
-import InstructorInfo from "./components/InstructorInfo";
-import EndorsementSelection from "./components/EndorsementSelection";
-import GenericAdditionalInfo from "./components/GenericAdditionalInfo";
+import StudentInfo from './components/people_information/StudentInfo';
+import InstructorInfo from "./components/people_information/InstructorInfo";
+import EndorsementSelection from "./components/endorsement_selection/EndorsementSelection";
+import GenericAdditionalInfo from "./components/additional_information/GenericAdditionalInfo";
 
 class App extends Component {
 
@@ -33,10 +33,7 @@ class App extends Component {
     handleChange = ({target: {value,name}}) =>
     {
          // console.log("["+name+"]: "+value);
-        if(name === 'studentName' && value === ''){
-            this.setState({studentName: '(First Name, MI, Last name)_________________________'});
-        }
-        else if(name === 'expDate')
+        if(name === 'expDate')
         {
             this.setState({expDate: moment(value).format("MM/YYYY")});
         }
@@ -58,15 +55,26 @@ class App extends Component {
         this.setState({endorsements: newArr});
     }
 
+    setEndorsements = (end) =>{
+        this.setState({endorsements: end});
+    }
 
-    removeEndorsements = (end) =>{
-        end.toString().split(",").forEach(i => {
-            this.setState(prevState => ({
-                endorsements: prevState.endorsements.filter(item => item != i)
-            }));
-        })
+    removeEndorsements = (id) =>{
+        // console.log("id: "+id);
+        const newArr = this.state.endorsements.filter(i => i !== id);
+        console.log("newArr: "+newArr);
+        this.setState({endorsements: newArr});
 
     }
+   /* removeEndorsements = (end) =>{
+        end.toString().split(",").forEach(i => {
+            console.log("i: "+i);
+            let tempList = this.state.endorsements.filter(item => JSON.stringify(item) !== JSON.stringify(i));
+            console.log("temp: "+tempList);
+            this.setState({endorsements: tempList});
+        })
+
+    }*/
 
     updateAdditionalInfo = ({cat,newValue}) =>{
         let newAddInfo = this.state.displayAddInfo;
@@ -84,7 +92,7 @@ class App extends Component {
         })
   }
 
-  test = () =>{console.log("Endorsements: "+this.state.endorsements);console.log("generic_info: "+this.state.generic_info)}
+  test = () =>{console.log("Endorsements: "+this.state.endorsements)}
 
     render() {
         return (
@@ -114,7 +122,13 @@ class App extends Component {
                     </Row>
                     <Row>
                         <Col md={12}>
-                            <EndorsementSelection addEndorsements={this.addEndorsements} removeEndorsements={this.removeEndorsements} updateAdditionalInfo={this.updateAdditionalInfo}/>
+                            <EndorsementSelection
+                                addEndorsements={this.addEndorsements}
+                                setEndorsements={this.setEndorsements}
+                                removeEndorsements={this.removeEndorsements}
+                                updateAdditionalInfo={this.updateAdditionalInfo}
+                                endorsements={this.state.endorsements}
+                            />
                         </Col>
                     </Row>
                 </Container>
@@ -128,7 +142,7 @@ class App extends Component {
                 <Container>
                     <Row>
                         <Col md={12}>
-                            {/*<Button onClick={this.test}>Test</Button>*/}
+                            <Button onClick={this.test}>Test</Button>
                             <Button onClick={this.createAndDownloadPdf} variant="primary" size="lg" block>Generate PDF</Button>
                         </Col>
                     </Row>

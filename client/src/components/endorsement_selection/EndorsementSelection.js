@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ChevronDoubleRight, ChevronDoubleDown } from 'react-bootstrap-icons';
 
 import Endorsements from "./Endorsements";
-import { categories, generic_endorsements } from './resources/Endorsements_Data';
+import { categories, generic_endorsements } from '../resources/Endorsements_Data';
 
 
 function CustomToggle({ children, eventKey, handleClick }) {
@@ -60,8 +60,10 @@ class EndorsementSelection extends Component{
                                     <div>
                                         <Endorsements category={cat}
                                                       addEndorsements={this.props.addEndorsements}
+                                                      setEndorsements={this.props.setEndorsements}
                                                       removeEndorsements={this.props.removeEndorsements}
                                                       updateAdditionalInfo={this.props.updateAdditionalInfo}
+                                                      endorsements={this.props.endorsements}
                                         />
                                     </div>
                                     <div>
