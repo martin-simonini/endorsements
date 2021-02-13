@@ -8,25 +8,27 @@ import moment from 'moment';
 
 import './css/App.css';
 
-import { categories } from './components/resources/Endorsements_Data';
 import StudentInfo from './components/people_information/StudentInfo';
 import InstructorInfo from "./components/people_information/InstructorInfo";
 import EndorsementSelection from "./components/endorsement_selection/EndorsementSelection";
 import GenericAdditionalInfo from "./components/additional_information/GenericAdditionalInfo";
+import TSAAdditionalInfo from "./components/additional_information/TSAAdditionalInfo";
+import StudentPilotAdditionalInfo from "./components/additional_information/StudentPilotAdditionalInfo";
 
 class App extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            studentName:'(First Name, MI, Last name)_________________________',
-            gender: '[he or she]',
+            studentName:'(First Name, MI, Last name)______________________________________',
+            gender: '(he or she)_____________',
             cfiNumber: '',
             expDate: '',
             signedDate: '',
             endorsements: [],
-            displayAddInfo: new Array(categories.length).fill(false),
-            generic_info: ['________________________','________________________']
+            generic_info: ['________________________','________________________'],
+            tsa_info: '(type of document) ________________________',
+            //TODO: create object to handle student pilot additional information
         }
     }
 
@@ -62,26 +64,10 @@ class App extends Component {
     removeEndorsements = (id) =>{
         // console.log("id: "+id);
         const newArr = this.state.endorsements.filter(i => i !== id);
-        console.log("newArr: "+newArr);
         this.setState({endorsements: newArr});
 
     }
-   /* removeEndorsements = (end) =>{
-        end.toString().split(",").forEach(i => {
-            console.log("i: "+i);
-            let tempList = this.state.endorsements.filter(item => JSON.stringify(item) !== JSON.stringify(i));
-            console.log("temp: "+tempList);
-            this.setState({endorsements: tempList});
-        })
 
-    }*/
-
-    updateAdditionalInfo = ({cat,newValue}) =>{
-        let newAddInfo = this.state.displayAddInfo;
-        let index = categories.findIndex(i => cat === i);
-        newAddInfo[index] = newValue;
-        this.setState({displayAdditionalInfo: newAddInfo});
-    }
   createAndDownloadPdf = () => {
     axios.post('/create-pdf', this.state)
         .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
@@ -126,18 +112,26 @@ class App extends Component {
                                 addEndorsements={this.addEndorsements}
                                 setEndorsements={this.setEndorsements}
                                 removeEndorsements={this.removeEndorsements}
-                                updateAdditionalInfo={this.updateAdditionalInfo}
+                                //updateAdditionalInfo={this.updateAdditionalInfo}
                                 endorsements={this.state.endorsements}
                             />
                         </Col>
                     </Row>
                 </Container>
                 <Container>
-                    <Row>
-                        <Col md={12}>
-                            <GenericAdditionalInfo display={this.state.displayAddInfo[0]} handleChange={this.handleProcessedChange} endorsements={this.state.endorsements}/>
-                        </Col>
-                    </Row>
+                    <GenericAdditionalInfo
+                        handleChange={this.handleProcessedChange}
+                        endorsements={this.state.endorsements}
+                    />
+                    <TSAAdditionalInfo
+                        handleChange={this.handleProcessedChange}
+                        endorsements={this.state.endorsements}
+                    />
+                    <StudentPilotAdditionalInfo
+                        handleChange={this.handleProcessedChange}
+                        endorsements={this.state.endorsements}
+                    />
+
                 </Container>
                 <Container>
                     <Row>

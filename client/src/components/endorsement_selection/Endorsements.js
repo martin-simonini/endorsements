@@ -26,13 +26,11 @@ class Endorsements extends Component{
          {
              //pushing change to App.js
              this.props.removeEndorsements(name);
-             this.updateDisplay(false);
          }
          else //Adding new item
          {
              //pushing change to App.js
              this.props.addEndorsements(name);
-             this.updateDisplay(true);
          }
     }
 
@@ -123,11 +121,9 @@ class Endorsements extends Component{
                 temp = temp.filter(item => item !== i);
             })
             this.props.addEndorsements(temp);
-            this.updateDisplay(true);
         }
         else{ //User wants to deselect all
             this.props.removeEndorsements(temp);
-            this.updateDisplay(false);
         }
 
 
@@ -136,32 +132,6 @@ class Endorsements extends Component{
             disableAll: !prevState.disableAll
         }));
     }
-
-    /*
-     * This method will update the additional options sections. This way the user is only presented with data fields
-     * pertaining to the the endorsements they chose.
-     */
-    updateDisplay = (adding) =>{
-        /* Since the setState is asynchronous we can get into a state that the last endorsement has been deselected but
-           checked has not updated (same thing is true for adding the first end.). The two first if statements take care
-           of this issue.
-         */
-        if(this.props.endorsements.length === 0 && adding){
-            this.props.updateAdditionalInfo({cat: this.props.category, newValue: true});
-            this.setState({displayAdditionalInfo: true});
-        }else if(this.props.endorsements.length === 1 && !adding){
-            this.props.updateAdditionalInfo({cat: this.props.category, newValue: false});
-            this.setState({displayAdditionalInfo: false});
-        }
-        else if(this.props.endorsements.length === 0 && this.state.displayAdditionalInfo) {
-            this.props.updateAdditionalInfo({cat: this.props.category, newValue: false});
-            this.setState({displayAdditionalInfo: false});
-        }else if( this.props.endorsements.length > 0 && !this.state.displayAdditionalInfo){
-            this.props.updateAdditionalInfo({cat: this.props.category, newValue: true});
-            this.setState({displayAdditionalInfo: true});
-        }
-    }
-
 
     render() {
         this.setEndorsementPool(this.props.category);
@@ -173,7 +143,7 @@ class Endorsements extends Component{
                         <Row className="shadow-lg  border endorsementCard">
                             <Form.Check label="Select All" onChange={this.selectAll} />
                         </Row>
-                        {this.state.endorsement_pool.map((end, index) => (
+                        {this.state.endorsement_pool.map((end) => (
                             <Row className="shadow-lg  border  endorsementCard">
                                 <Col>
                                     <Form.Check

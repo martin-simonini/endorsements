@@ -7,10 +7,14 @@ const getCount = (array, item) =>{
     return count;
 }
 
-module.exports = ({studentName, gender, cfiNumber, expDate, signedDate, endorsements, generic_info}) => {
+module.exports = ({
+                      studentName, gender, makeAndModel, solo_night_airport, solo_lt_25_xc, endorsements, typeOfDocument, generic_info,
+                      cfiNumber, expDate, signedDate
+}) => {
 
     const generic = require("./resources/generic_endorsements");
     const student_pilot = require("./resources/student_pilot_endorsements");
+    const tsa = require("./resources/tsa_endorsements");
 
     return `
 <!DOCTYPE html>
@@ -66,22 +70,26 @@ ${Array(getCount(endorsements,"A2")).join(0).split(0).map(() => `
     ${endorsements.includes("A2")? generic.A2({studentName, gender, generic_info, signedDate, cfiNumber, expDate}):""}
   `).join('')}
 ${Array(getCount(endorsements,"A3")).join(0).split(0).map(() => `
-    ${endorsements.includes("A3")? student_pilot.A3({studentName, signedDate, cfiNumber, expDate}):""}
+    ${endorsements.includes("A3")? student_pilot.A3({studentName, makeAndModel, signedDate, cfiNumber, expDate}):""}
   `).join('')}
 ${Array(getCount(endorsements,"A4")).join(0).split(0).map(() => `
-    ${endorsements.includes("A4")? student_pilot.A4({studentName, gender, signedDate, cfiNumber, expDate}):""}
+    ${endorsements.includes("A4")? student_pilot.A4({studentName, makeAndModel, gender, signedDate, cfiNumber, expDate}):""}
   `).join('')}
 ${Array(getCount(endorsements,"A5")).join(0).split(0).map(() => `
-    ${endorsements.includes("A5")? student_pilot.A5({studentName, signedDate, cfiNumber, expDate}):""}
+    ${endorsements.includes("A5")? student_pilot.A5({studentName, solo_night_airport, signedDate, cfiNumber, expDate}):""}
   `).join('')}
 ${Array(getCount(endorsements,"A6")).join(0).split(0).map(() => `
-    ${endorsements.includes("A6")? student_pilot.A6({studentName, gender, signedDate, cfiNumber, expDate}):""}
+    ${endorsements.includes("A6")? student_pilot.A6({studentName, gender, makeAndModel, signedDate, cfiNumber, expDate}):""}
   `).join('')}
 ${Array(getCount(endorsements,"A7")).join(0).split(0).map(() => `
-    ${endorsements.includes("A7")? student_pilot.A7({studentName, gender, signedDate, cfiNumber, expDate}):""}
+    ${endorsements.includes("A7")? student_pilot.A7({studentName, gender, makeAndModel, signedDate, cfiNumber, expDate}):""}
   `).join('')}
 ${Array(getCount(endorsements,"A8")).join(0).split(0).map(()=> `
-    ${endorsements.includes("A8")? student_pilot.A8({studentName, gender, signedDate, cfiNumber, expDate}):""}
+    ${endorsements.includes("A8")? student_pilot.A8({studentName, gender, solo_lt_25_xc, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+
+${Array(getCount(endorsements,"A14")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A14")? tsa.A14({studentName, typeOfDocument, gender, signedDate, cfiNumber, expDate}):""}
   `).join('')}
 
 </body>

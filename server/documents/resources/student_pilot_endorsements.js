@@ -1,5 +1,4 @@
-//TODO: Add Make and Model
-const A3 = ({studentName, signedDate, cfiNumber, expDate}) => {
+const A3 = ({studentName, makeAndModel, signedDate, cfiNumber, expDate}) => {
     return `
     <table class="floatLeft">
         <tr>
@@ -10,7 +9,7 @@ const A3 = ({studentName, signedDate, cfiNumber, expDate}) => {
         <tr>
             <td class="endorsement_text">
                 I certify that ${studentName} has satisfactorily completed the pre-solo
-                knowledge test of § 61.87(b) for the [make and model] aircraft.
+                knowledge test of § 61.87(b) for the ${makeAndModel} aircraft.
                 test. <br><br>
             </td>
         </tr>
@@ -23,8 +22,7 @@ const A3 = ({studentName, signedDate, cfiNumber, expDate}) => {
     </table>`
 }
 
-//TODO: Add Make and Model
-const A4 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
+const A4 = ({studentName, makeAndModel, gender, signedDate, cfiNumber, expDate}) => {
     return`
     <table class="floatRight">
         <tr>
@@ -35,7 +33,7 @@ const A4 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
         <tr>
             <td class="endorsement_text">
                 I certify that ${studentName} has received and logged pre-solo flight training
-                for the maneuvers and procedures that are appropriate to the [make and model] aircraft. I
+                for the maneuvers and procedures that are appropriate to the ${makeAndModel} aircraft. I
                 have determined ${gender} has demonstrated satisfactory proficiency and safety on the
                 maneuvers and procedures required by § 61.87 in this or similar make and model of
                 aircraft to be flown. <br><br>
@@ -51,8 +49,7 @@ const A4 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
     `
 }
 
-//TODO: Add Airport name
-const A5 = ({studentName, signedDate, cfiNumber, expDate}) => {
+const A5 = ({studentName, solo_night_airport, signedDate, cfiNumber, expDate}) => {
     return `
     <table class="floatRight">
         <tr>
@@ -64,8 +61,8 @@ const A5 = ({studentName, signedDate, cfiNumber, expDate}) => {
             <td class="endorsement_text">
                 I certify that ${studentName} has received flight training at night on night
                 flying procedures that include takeoffs, approaches, landings, and go-arounds at night at
-                the [airport name] airport where the solo flight will be conducted; navigation training at
-                night in the vicinity of the [airport name] airport where the solo flight will be conducted.
+                the ${solo_night_airport} airport where the solo flight will be conducted; navigation training at
+                night in the vicinity of the ${solo_night_airport} airport where the solo flight will be conducted.
                 This endorsement expires 90 calendar-days from the date the flight training at night was
                 received. <br><br>
             </td>
@@ -80,8 +77,7 @@ const A5 = ({studentName, signedDate, cfiNumber, expDate}) => {
     `
 }
 
-//TODO: Add Make and Model
-const A6 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
+const A6 = ({studentName, gender, makeAndModel, signedDate, cfiNumber, expDate}) => {
     return `
     <table class="floatRight">
         <tr>
@@ -93,7 +89,7 @@ const A6 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
             <td class="endorsement_text">
                 I certify that ${studentName} has received the required training to qualify for
                 solo flying. I have determined ${gender} meets the applicable requirements of § 61.87(n)
-                and is proficient to make solo flights in [make and model]. <br><br>
+                and is proficient to make solo flights in ${makeAndModel}. <br><br>
             </td>
         </tr>
        <tr>
@@ -106,8 +102,7 @@ const A6 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
     `
 }
 
-//TODO: Add make and model
-const A7 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
+const A7 = ({studentName, gender, makeAndModel, signedDate, cfiNumber, expDate}) => {
     return `
     <table class="floatRight">
         <tr>
@@ -120,7 +115,7 @@ const A7 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
             <td class="endorsement_text">
                 I certify that ${studentName} has received the required training to qualify for
                 solo flying. I have determined that ${gender} meets the applicable requirements of
-                § 61.87(p) and is proficient to make solo flights in [make and model]. <br><br>
+                § 61.87(p) and is proficient to make solo flights in ${makeAndModel}. <br><br>
             </td>
         </tr>
         <tr>
@@ -133,9 +128,7 @@ const A7 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
     `
 }
 
-//TODO: Add Airport name
-//TODO: Add limitations
-const A8 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
+const A8 = ({studentName, gender, solo_lt_25_xc, signedDate, cfiNumber, expDate}) => {
     return `
     <table class="floatRight">
         <tr>
@@ -148,8 +141,8 @@ const A8 = ({studentName, gender, signedDate, cfiNumber, expDate}) => {
             <td class="endorsement_text">
                 I certify that ${studentName} has received the required training of
                 § 61.93(b)(1). I have determined that ${gender} is proficient to practice solo takeoffs and
-                landings at [airport name]. The takeoffs and landings at [airport name] are subject to the
-                following conditions: [List any applicable conditions or limitations.] <br><br>
+                landings at ${solo_lt_25_xc.airpot}. The takeoffs and landings at ${solo_lt_25_xc.airpot} are subject to the
+                following conditions: ${solo_lt_25_xc.limitation} <br><br>
             </td>
         </tr>
         <tr>

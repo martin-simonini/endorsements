@@ -62,7 +62,6 @@ class EndorsementSelection extends Component{
                                                       addEndorsements={this.props.addEndorsements}
                                                       setEndorsements={this.props.setEndorsements}
                                                       removeEndorsements={this.props.removeEndorsements}
-                                                      updateAdditionalInfo={this.props.updateAdditionalInfo}
                                                       endorsements={this.props.endorsements}
                                         />
                                     </div>

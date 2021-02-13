@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca7c9b1-ae6c-45f4-873d-1850cd05a937" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/additional_information/StudentPilotAdditionalInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/additional_information/TSAAdditionalInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/documents/resources/tsa_endorsements.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/EndorsementSelection.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/endorsement_selection/EndorsementSelection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Endorsements.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/endorsement_selection/Endorsements.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/GenericAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/GenericAdditionalInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/InstructorInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/people_information/InstructorInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/RepeatEndorsement.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/endorsement_selection/RepeatEndorsement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/StudentInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/people_information/StudentInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/css/Endorsements.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/css/Endorsements.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/GenericAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/GenericAdditionalInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/endorsement_selection/EndorsementSelection.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/endorsement_selection/EndorsementSelection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/endorsement_selection/Endorsements.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/endorsement_selection/Endorsements.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/documents/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/documents/resources/student_pilot_endorsements.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/resources/student_pilot_endorsements.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/result.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/server/result.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +46,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -54,6 +56,19 @@
       <recent name="C:\Users\User\Desktop\Projects\Endorsements\client\src\components" />
       <recent name="C:\Users\User\Desktop\Projects\Endorsements\client\src\css" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -74,7 +89,12 @@
       <workItem from="1612746147548" duration="1400000" />
       <workItem from="1612747665358" duration="6356000" />
       <workItem from="1612757495127" duration="487000" />
-      <workItem from="1612810907778" duration="4725000" />
+      <workItem from="1612810907778" duration="6137000" />
+      <workItem from="1613016323108" duration="1535000" />
+      <workItem from="1613018077756" duration="372000" />
+      <workItem from="1613104550081" duration="687000" />
+      <workItem from="1613105309810" duration="57000" />
+      <workItem from="1613142754083" duration="7864000" />
     </task>
     <task id="LOCAL-00001" summary="rewrote the setEndorsementPool method and added to the more endorsements.">
       <created>1609533432792</created>
@@ -118,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610755564505</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="finished repeat functionality">
+      <created>1612816593596</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1612816593596</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,7 +156,24 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="v1-development" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -143,6 +187,8 @@
     <MESSAGE value="Began the additional information for the endorsements. Added the functionality that the additional information will appear only when the appropriate endorsements are selected." />
     <MESSAGE value="Additional information for the generic endorsements will be passed to the PDF." />
     <MESSAGE value="Began working on the repeat functionality." />
-    <option name="LAST_COMMIT_MESSAGE" value="Began working on the repeat functionality." />
+    <MESSAGE value="finished repeat functionality" />
+    <MESSAGE value="Finished generic additional information and TSA additional information. Began working on student pilot additional info. Added TSA endorsements to server and finished A3-A7 in student_pilot_endorsements." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished generic additional information and TSA additional information. Began working on student pilot additional info. Added TSA endorsements to server and finished A3-A7 in student_pilot_endorsements." />
   </component>
 </project>

@@ -27,7 +27,7 @@ class GenericAdditionalInfo extends Component{
 
     render() {
 
-        if(this.props.display)
+        if(this.props.endorsements.includes("A1") || this.props.endorsements.includes("A2"))
         {
             return (
                 <>
