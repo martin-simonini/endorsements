@@ -28,8 +28,31 @@ class App extends Component {
             endorsements: [],
             generic_info: ['________________________','________________________'],
             tsa_info: '(type of document) ________________________',
-            //TODO: create object to handle student pilot additional information
+            student_info: {
+                A3_makeModel: '',
+                A4_makeModel: '',
+                A5_airport: '',
+                A6_makeModel: '',
+                A7_makeModel: '',
+                A8_airport: '',
+                A8_limitations: '',
+                A9_makeModel: '',
+                A9_category: '',
+                A10_origin_airport: '',
+                A10_route: '',
+                A10_landings: '',
+                A10_makeModel: '',
+                A10_date: '',
+                A10_limitations: '',
+                A11_airport: '',
+                A11_limitations: '',
+                A12_classB: '',
+                A12_limitations: '',
+                A13_airport:'',
+                A13_limitations: '',
+            }
         }
+
     }
 
     handleChange = ({target: {value,name}}) =>
@@ -66,6 +89,15 @@ class App extends Component {
         const newArr = this.state.endorsements.filter(i => i !== id);
         this.setState({endorsements: newArr});
 
+    }
+
+    handleStudentPilotAdditionalInfo = ({target: {name,value}}) =>{
+            this.setState(prevState =>({
+                student_info: {
+                    ...prevState.student_info,
+                    [name]: value
+                }
+            }))
     }
 
   createAndDownloadPdf = () => {
@@ -128,7 +160,7 @@ class App extends Component {
                         endorsements={this.state.endorsements}
                     />
                     <StudentPilotAdditionalInfo
-                        handleChange={this.handleProcessedChange}
+                        handleChange={this.handleStudentPilotAdditionalInfo}
                         endorsements={this.state.endorsements}
                     />
 

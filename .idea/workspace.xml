@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca7c9b1-ae6c-45f4-873d-1850cd05a937" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/additional_information/StudentPilotAdditionalInfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/additional_information/TSAAdditionalInfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/documents/resources/tsa_endorsements.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/GenericAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/GenericAdditionalInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/endorsement_selection/EndorsementSelection.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/endorsement_selection/EndorsementSelection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/endorsement_selection/Endorsements.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/endorsement_selection/Endorsements.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/documents/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/documents/resources/student_pilot_endorsements.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/resources/student_pilot_endorsements.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/result.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/server/result.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/StudentPilotAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/StudentPilotAdditionalInfo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +86,7 @@
       <workItem from="1613018077756" duration="372000" />
       <workItem from="1613104550081" duration="687000" />
       <workItem from="1613105309810" duration="57000" />
-      <workItem from="1613142754083" duration="7864000" />
+      <workItem from="1613142754083" duration="12921000" />
     </task>
     <task id="LOCAL-00001" summary="rewrote the setEndorsementPool method and added to the more endorsements.">
       <created>1609533432792</created>
@@ -145,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612816593596</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Finished generic additional information and TSA additional information. Began working on student pilot additional info. Added TSA endorsements to server and finished A3-A7 in student_pilot_endorsements.">
+      <created>1613197603921</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1613197603921</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
