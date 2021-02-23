@@ -42,7 +42,8 @@ export const tsa_endorsement = [
     {name: "Endorsement of U.S. citizenship recommended by the Transportation Security Administration (TSA): Title 49 of the Code of Federal Regulations (49 CFR) § 1552.3(h).", id: "A14"}
 ]
 
-export const aircraft = [
+export const aircraft_make_and_model = [
+    "A3",
     "A4",
     "A6",
     "A7",
@@ -59,7 +60,8 @@ export const limitations = [
 ]
 
 export const aircraft_category = [
-    "A9"
+    "A9",
+
 ]
 
 export const FULL_PAGE = 12;

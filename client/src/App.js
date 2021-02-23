@@ -3,6 +3,7 @@ import axios from 'axios';
 import { saveAs } from 'file-saver';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-datepicker/dist/react-datepicker.css';
 
 import moment from 'moment';
 
@@ -29,6 +30,25 @@ class App extends Component {
             generic_info: ['________________________','________________________'],
             tsa_info: '(type of document) ________________________',
             student_info: {
+                makeModel:'',
+                A5_airport: '',
+                A8_airport: '',
+                A8_limitations: '',
+                category: '',
+                A10_origin_airport: '',
+                A10_route: '',
+                A10_landings: '',
+                A10_date: '',
+                A10_limitations: '',
+                A11_airport: '',
+                A11_limitations: '',
+                A12_classB: '',
+                A12_limitations: '',
+                A13_airport:'',
+                A13_limitations: '',
+            }
+
+            /* student_info: {
                 A3_makeModel: '',
                 A4_makeModel: '',
                 A5_airport: '',
@@ -50,7 +70,7 @@ class App extends Component {
                 A12_limitations: '',
                 A13_airport:'',
                 A13_limitations: '',
-            }
+            }*/
         }
 
     }
@@ -110,8 +130,8 @@ class App extends Component {
         })
   }
 
-  test = () =>{console.log("Endorsements: "+this.state.endorsements)}
-
+  //test = () =>{console.log("Endorsements: "+this.state.endorsements)}
+    test = () =>{console.log(this.state.student_info)}
     render() {
         return (
             <div className="App">
@@ -151,6 +171,7 @@ class App extends Component {
                     </Row>
                 </Container>
                 <Container>
+
                     <GenericAdditionalInfo
                         handleChange={this.handleProcessedChange}
                         endorsements={this.state.endorsements}
