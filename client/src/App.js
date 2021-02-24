@@ -20,6 +20,10 @@ import AdditionalStudentPilotAdditionalInfo
 
 class App extends Component {
 
+    /*
+        *TODO: Make it so that the the select all becomes a clear all when the user has de-selects the "select All"
+        * and all the endorsements are still selected.
+     */
     constructor(props) {
         super(props);
         this.state = {

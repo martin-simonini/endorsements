@@ -2,7 +2,7 @@
 
 const A1 = ({studentName, gender, generic_info, signedDate, cfiNumber, expDate}) => {
     return `
-    <table class="floatLeft">
+    <table>
         <tr>
             <td class="title">
                 Prerequisites for practical test: Title 14 of the Code of Federal Regulations
@@ -29,7 +29,7 @@ const A1 = ({studentName, gender, generic_info, signedDate, cfiNumber, expDate})
 
 const A2 = ({studentName, gender, generic_info, signedDate, cfiNumber, expDate}) => {
     return`
-    <table class="floatLeft">
+    <table>
         <tr>
             <td class="title">
                 Review of deficiencies identified on airman knowledge test: § 61.39(a)(6)(iii),

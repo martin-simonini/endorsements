@@ -64,7 +64,7 @@ const A5 = ({studentName, A5_airport, signedDate, cfiNumber, expDate}) => {
                 the ${A5_airport} airport where the solo flight will be conducted; navigation training at
                 night in the vicinity of the ${A5_airport} airport where the solo flight will be conducted.
                 This endorsement expires 90 calendar-days from the date the flight training at night was
-                received. <br><br>
+                received. 
             </td>
         </tr>
         <tr>

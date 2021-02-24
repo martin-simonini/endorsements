@@ -48,10 +48,10 @@ module.exports = ({
     <title>Title</title>
     <style>
         table{
-            width: 370px;
-            height: 145px;
-            margin: 2px;
-            padding: 2px;
+            width: 48%;
+            height: 16%;
+            margin: 1px;
+            padding: 1px;
             border: 1px solid #eee;
             font-size: 10px;
             line-height: 14px;
