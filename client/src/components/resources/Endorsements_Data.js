@@ -38,6 +38,11 @@ export const student_pilot_endorsements = [
     {name: "Solo flight to, from, or at an airport located in Class B airspace: § 61.95(b) and 14 CFR part 91, § 91.131(b)(1).", id: "A13"},
 ]
 
+export const additional_student_pilot_endorsements = [
+    {name: "Solo flight in Class B, C, and D airspace: § 61.94(a).", id: "A15"},
+    {name: "Solo flight to, from, or at an airport located in Class B, C, or D airspace or at an airport having an operational control tower: §§ 61.94(a) and 91.131(b)(1).", id: "A16"}
+]
+
 export const tsa_endorsement = [
     {name: "Endorsement of U.S. citizenship recommended by the Transportation Security Administration (TSA): Title 49 of the Code of Federal Regulations (49 CFR) § 1552.3(h).", id: "A14"}
 ]

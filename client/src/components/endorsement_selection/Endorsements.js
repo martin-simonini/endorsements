@@ -5,7 +5,7 @@ import { Form, Container, Row, Col } from 'react-bootstrap';
 
 import '../../css/Endorsements.css';
 
-import {generic_endorsements, tsa_endorsement, student_pilot_endorsements} from '../resources/Endorsements_Data';
+import {generic_endorsements, tsa_endorsement, student_pilot_endorsements, additional_student_pilot_endorsements} from '../resources/Endorsements_Data';
 import RepeatEndorsement from "./RepeatEndorsement";
 
 
@@ -97,6 +97,8 @@ class Endorsements extends Component{
             newPool = tsa_endorsement;
         else if(cat === "STUDENT PILOT ENDORSEMENTS")
             newPool = student_pilot_endorsements;
+        else if( cat === "ADDITIONAL STUDENT PILOT ENDORSEMENTS FOR STUDENTS SEEKING SPORT OR RECREATIONAL PILOT CERTIFICATES")
+            newPool = additional_student_pilot_endorsements;
 
         //Verify endorsement_pool is not already set. May want to use something more robust than JSON.Stringify
         if(JSON.stringify(newPool) !== JSON.stringify(this.state.endorsement_pool)){

@@ -15,6 +15,8 @@ import EndorsementSelection from "./components/endorsement_selection/Endorsement
 import GenericAdditionalInfo from "./components/additional_information/GenericAdditionalInfo";
 import TSAAdditionalInfo from "./components/additional_information/TSAAdditionalInfo";
 import StudentPilotAdditionalInfo from "./components/additional_information/StudentPilotAdditionalInfo";
+import AdditionalStudentPilotAdditionalInfo
+    from "./components/additional_information/AdditionalStudentPilotAdditionalInfo";
 
 class App extends Component {
 
@@ -30,47 +32,28 @@ class App extends Component {
             generic_info: ['________________________','________________________'],
             tsa_info: '(type of document) ________________________',
             student_info: {
-                makeModel:'',
-                A5_airport: '',
-                A8_airport: '',
-                A8_limitations: '',
-                category: '',
-                A10_origin_airport: '',
-                A10_route: '',
-                A10_landings: '',
-                A10_date: '',
-                A10_limitations: '',
-                A11_airport: '',
-                A11_limitations: '',
-                A12_classB: '',
-                A12_limitations: '',
-                A13_airport:'',
-                A13_limitations: '',
+                makeModel:'(Make and Model) ________________________',
+                A5_airport: '________________________',
+                A8_airport: '(airport name)________________________',
+                A8_limitations: '________________________________',
+                category: '(category)________________________',
+                A10_origin_airport: '(origination airport)________________________',
+                A10_route: '(route)________________________',
+                A10_landings: '________________________',
+                A10_date: '________________________',
+                A10_limitations: '________________________________',
+                A11_airport: '(airport name)________________________',
+                A11_limitations: '________________________________________________',
+                A12_classB: '(airport name)________________________',
+                A12_limitations: '(limitations)________________________________',
+                A13_airport:'(airport name)________________________',
+                A13_limitations: '________________________________',
+                A15_airspace:'(name of airspace)________________________',
+                A15_airport:'(airport name)________________________',
+                A15_limitations:'(limitations)________________________________',
+                A16_airport:'(airport name)________________________',
+                A16_limitations:'(limitations)________________________________'
             }
-
-            /* student_info: {
-                A3_makeModel: '',
-                A4_makeModel: '',
-                A5_airport: '',
-                A6_makeModel: '',
-                A7_makeModel: '',
-                A8_airport: '',
-                A8_limitations: '',
-                A9_makeModel: '',
-                A9_category: '',
-                A10_origin_airport: '',
-                A10_route: '',
-                A10_landings: '',
-                A10_makeModel: '',
-                A10_date: '',
-                A10_limitations: '',
-                A11_airport: '',
-                A11_limitations: '',
-                A12_classB: '',
-                A12_limitations: '',
-                A13_airport:'',
-                A13_limitations: '',
-            }*/
         }
 
     }
@@ -181,6 +164,10 @@ class App extends Component {
                         endorsements={this.state.endorsements}
                     />
                     <StudentPilotAdditionalInfo
+                        handleChange={this.handleStudentPilotAdditionalInfo}
+                        endorsements={this.state.endorsements}
+                    />
+                    <AdditionalStudentPilotAdditionalInfo
                         handleChange={this.handleStudentPilotAdditionalInfo}
                         endorsements={this.state.endorsements}
                     />

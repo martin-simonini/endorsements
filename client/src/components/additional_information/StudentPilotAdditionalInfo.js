@@ -37,7 +37,7 @@ class StudentPilotAdditionalInfo extends Component{
     }
 
     showDate = () =>{
-        if(!this.state.showDate == false){
+        if(!this.state.showDate === false){
             this.props.handleChange({target: {name:"A10_date", value: ''}});
             this.setState(prevState => ({
                 XcDate: null,

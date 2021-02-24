@@ -1,4 +1,4 @@
-const A14 = ({studentName, typeOfDocument, gender, signedDate, cfiNumber, expDate}) => {
+const A14 = ({studentName, tsa_info, gender, signedDate, cfiNumber, expDate}) => {
     return `
     <table class="floatLeft">
         <tr>
@@ -9,7 +9,7 @@ const A14 = ({studentName, typeOfDocument, gender, signedDate, cfiNumber, expDat
         </tr>
         <tr>
             <td class="endorsement_text">
-                I certify that ${studentName} has presented me a ${typeOfDocument} establishing that ${gender} is a U.S. citizen
+                I certify that ${studentName} has presented me a ${tsa_info} establishing that ${gender} is a U.S. citizen
                 or national in accordance with 49 CFR § 1552.3(h). <br><br>
             </td>
         </tr>

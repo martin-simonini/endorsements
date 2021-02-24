@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ChevronDoubleRight, ChevronDoubleDown } from 'react-bootstrap-icons';
 
 import Endorsements from "./Endorsements";
-import { categories, generic_endorsements } from '../resources/Endorsements_Data';
+import { categories } from '../resources/Endorsements_Data';
 
 
 function CustomToggle({ children, eventKey, handleClick }) {
