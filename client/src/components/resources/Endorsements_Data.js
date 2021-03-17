@@ -73,6 +73,11 @@ export const private_pilot_endorsements = [
     {name: "Flight proficiency/practical test: §§ 61.103(f), 61.107(b), and 61.109", id: "A33"}
 ]
 
+export const commercial_pilot_endorsements = [
+    {name: "Aeronautical knowledge test: §§ 61.35(a)(1), 61.123(c), and 61.125. ", id: "A34"},
+    {name: "Flight proficiency/practical test: §§ 61.123(e), 61.127, and 61.129.", id: "A35"}
+]
+
 export const aircraft_make_and_model = [
     "A3",
     "A4",

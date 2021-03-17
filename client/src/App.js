@@ -20,6 +20,7 @@ import AdditionalStudentPilotAdditionalInfo
 import SportPilotAdditionalInfo from "./components/additional_information/SportPilotAdditionalInfo";
 import RecreationalPilotAdditionalInfo from "./components/additional_information/RecreationalPilotAdditionalInfo";
 import PrivatePilotAdditionalInfo from "./components/additional_information/PrivatePilotAdditionalInfo";
+import CommercialPilotAdditionalInfo from "./components/additional_information/CommercialPilotAdditionalInfo";
 
 class App extends Component {
 
@@ -66,7 +67,8 @@ class App extends Component {
             recreational_makeModel: '(Make and Model) ________________________',
             A30_date: '________________________',
             A30_limitations: '(limitations)________________________________',
-            A33_practical:'_____________________'
+            A33_practical:'_____________________',
+            A35_practical:'_____________________'
         }
 
     }
@@ -195,6 +197,10 @@ class App extends Component {
                         endorsements={this.state.endorsements}
                     />
                     <PrivatePilotAdditionalInfo
+                        handleChange={this.handleChange}
+                        endorsements={this.state.endorsements}
+                    />
+                    <CommercialPilotAdditionalInfo
                         handleChange={this.handleChange}
                         endorsements={this.state.endorsements}
                     />

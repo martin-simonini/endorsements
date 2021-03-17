@@ -10,7 +10,7 @@ import {
     tsa_endorsement,
     student_pilot_endorsements,
     additional_student_pilot_endorsements,
-    sport_pilot_endorsements, recreational_pilot_endorsements, private_pilot_endorsements
+    sport_pilot_endorsements, recreational_pilot_endorsements, private_pilot_endorsements, commercial_pilot_endorsements
 } from '../resources/Endorsements_Data';
 import RepeatEndorsement from "./RepeatEndorsement";
 
@@ -162,6 +162,8 @@ class Endorsements extends Component{
             newPool = recreational_pilot_endorsements;
         else if( this.props.category === "PRIVATE PILOT ENDORSEMENTS")
             newPool = private_pilot_endorsements;
+        else if( this.props.category === "COMMERCIAL PILOT ENDORSEMENTS")
+            newPool = commercial_pilot_endorsements;
 
         //Verify endorsement_pool is not already set. May want to use something more robust than JSON.Stringify
         if(JSON.stringify(newPool) !== JSON.stringify(this.state.endorsement_pool)){
