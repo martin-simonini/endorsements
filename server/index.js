@@ -17,7 +17,8 @@ app.post('/create-pdf', (req, res) => {
         if(err) {
             res.send(Promise.reject());
         }
-            res.send(Promise.resolve());
+
+        res.send(Promise.resolve());
     });
 });
 

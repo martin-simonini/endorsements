@@ -5,7 +5,13 @@ import { Form, Container, Row, Col } from 'react-bootstrap';
 
 import '../../css/Endorsements.css';
 
-import {generic_endorsements, tsa_endorsement, student_pilot_endorsements, additional_student_pilot_endorsements} from '../resources/Endorsements_Data';
+import {
+    generic_endorsements,
+    tsa_endorsement,
+    student_pilot_endorsements,
+    additional_student_pilot_endorsements,
+    sport_pilot_endorsements
+} from '../resources/Endorsements_Data';
 import RepeatEndorsement from "./RepeatEndorsement";
 
 
@@ -21,23 +27,23 @@ class Endorsements extends Component{
        * Changes a checkbox from unselected to selected and via versa.
      */
     changeSelected = ({target: {name}}) =>{
-         // console.log("Name: "+name);
-         if(this.props.endorsements.includes(name))//Removing selected item
-         {
-             //pushing change to App.js
-             this.props.removeEndorsements(name);
-         }
-         else //Adding new item
-         {
-             //pushing change to App.js
-             this.props.addEndorsements(name);
-         }
+        // console.log("Name: "+name);
+        if(this.props.endorsements.includes(name))//Removing selected item
+        {
+            //pushing change to App.js
+            this.props.removeEndorsements(name);
+        }
+        else //Adding new item
+        {
+            //pushing change to App.js
+            this.props.addEndorsements(name);
+        }
     }
 
     addMultipleOfSameEndorsement = (num, id) =>{
         let current = this.getCount(id);
         // console.log("current count: "+current+", num: "+num);
-         if(current < num){
+        if(current < num){
             let newArr = this.props.endorsements;
             for(let i = 0; i < (num - current); i++){
                 newArr.push(id);
@@ -99,6 +105,8 @@ class Endorsements extends Component{
             newPool = student_pilot_endorsements;
         else if( cat === "ADDITIONAL STUDENT PILOT ENDORSEMENTS FOR STUDENTS SEEKING SPORT OR RECREATIONAL PILOT CERTIFICATES")
             newPool = additional_student_pilot_endorsements;
+        else if( cat === "SPORT PILOT ENDORSEMENTS")
+            newPool = sport_pilot_endorsements;
 
         //Verify endorsement_pool is not already set. May want to use something more robust than JSON.Stringify
         if(JSON.stringify(newPool) !== JSON.stringify(this.state.endorsement_pool)){
@@ -139,35 +147,35 @@ class Endorsements extends Component{
         this.setEndorsementPool(this.props.category);
 
 
-            return(
-                <>
-                    <Container>
-                        <Row className="shadow-lg  border endorsementCard">
-                            <Form.Check label="Select All" onChange={this.selectAll} />
+        return(
+            <>
+                <Container>
+                    <Row className="shadow-lg  border endorsementCard">
+                        <Form.Check label="Select All" onChange={this.selectAll} />
+                    </Row>
+                    {this.state.endorsement_pool.map((end) => (
+                        <Row className="shadow-lg  border  endorsementCard">
+                            <Col>
+                                <Form.Check
+                                    name={end.id}
+                                    label={end.name}
+                                    onChange={this.changeSelected}
+                                    disabled={this.state.disableAll}
+                                    checked={this.props.endorsements.includes(end.id)}
+                                />
+                            </Col>
+                            <Col className={this.props.endorsements.includes(end.id)?"shown":"hidden"}>
+                                <RepeatEndorsement
+                                    endorsement={end}
+                                    add={this.addMultipleOfSameEndorsement}
+                                    selected={this.props.endorsements.includes(end.id)}
+                                />
+                            </Col>
                         </Row>
-                        {this.state.endorsement_pool.map((end) => (
-                            <Row className="shadow-lg  border  endorsementCard">
-                                <Col>
-                                    <Form.Check
-                                        name={end.id}
-                                        label={end.name}
-                                        onChange={this.changeSelected}
-                                        disabled={this.state.disableAll}
-                                        checked={this.props.endorsements.includes(end.id)}
-                                    />
-                                </Col>
-                                <Col className={this.props.endorsements.includes(end.id)?"shown":"hidden"}>
-                                    <RepeatEndorsement
-                                        endorsement={end}
-                                        add={this.addMultipleOfSameEndorsement}
-                                        selected={this.props.endorsements.includes(end.id)}
-                                    />
-                                </Col>
-                            </Row>
-                        ))}
-                    </Container>
-                </>
-            );
+                    ))}
+                </Container>
+            </>
+        );
     }
 }
 

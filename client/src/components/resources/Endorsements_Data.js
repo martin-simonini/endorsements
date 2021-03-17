@@ -47,12 +47,26 @@ export const tsa_endorsement = [
     {name: "Endorsement of U.S. citizenship recommended by the Transportation Security Administration (TSA): Title 49 of the Code of Federal Regulations (49 CFR) § 1552.3(h).", id: "A14"}
 ]
 
+export const sport_pilot_endorsements = [
+    {name: "Aeronautical knowledge test: §§ 61.35(a)(1) and 61.309. ", id:"A17"},
+    {name: "Taking flight proficiency check for different category or class of aircraft: §§ 61.309 and 61.311.", id: "A18"},
+    {name: "Passing flight proficiency check for different category or class of aircraft: §§ 61.309 and 61.311. ", id: "A19"},
+    {name: "Taking sport pilot practical test: §§ 61.309, 61.311, and 61.313. ", id: "A20"},
+    {name: "Passing a sport pilot practical test: §§ 61.309, 61.311, and 61.313.", id: "A21"},
+    {name: "Class B, C, or D airspace, at an airport located in Class B, C, or D airspace, or to, from, through, or at an airport having an operational control tower: § 61.325. ", id: "A22"},
+    {name: "Light-sport aircraft that has a maximum speed in level flight with maximum continuous power (VH) less than or equal to 87 Knots Calibrated Airspeed (KCAS): § 61.327. ", id: "A23"},
+    {name: "Light-sport aircraft that has a VH greater than 87 KCAS: § 61.327. ", id: "A24"},
+]
+
 export const aircraft_make_and_model = [
     "A3",
     "A4",
     "A6",
     "A7",
     "A9",
+
+    "A23",
+    "A24"
 ]
 
 export const airport = [
@@ -66,7 +80,8 @@ export const limitations = [
 
 export const aircraft_category = [
     "A9",
-
+    "A19",
+    "A21",
 ]
 
 export const FULL_PAGE = 12;

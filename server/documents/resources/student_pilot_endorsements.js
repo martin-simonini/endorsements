@@ -36,7 +36,7 @@ const A4 = ({studentName, makeModel, gender, signedDate, cfiNumber, expDate}) =>
                 for the maneuvers and procedures that are appropriate to the ${makeModel} aircraft. I
                 have determined ${gender} has demonstrated satisfactory proficiency and safety on the
                 maneuvers and procedures required by § 61.87 in this or similar make and model of
-                aircraft to be flown. <br><br>
+                aircraft to be flown.
             </td>
         </tr>
        <tr>

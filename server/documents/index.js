@@ -8,13 +8,15 @@ const getCount = (array, item) =>{
 }
 
 module.exports = ({
-                      studentName, gender, cfiNumber, expDate, signedDate, endorsements, generic_info, tsa_info, student_info
-}) => {
+                      studentName, gender, cfiNumber, expDate, signedDate, endorsements, generic_info, tsa_info, student_info,
+                      sport_makeModel,sport_proficiency_check,sport_categoryClass,sport_knowledge_test
+                  }) => {
 
     const generic = require("./resources/generic_endorsements");
     const studentPilot = require("./resources/student_pilot_endorsements");
     const tsa = require("./resources/tsa_endorsements")
     const additional_student_pilot = require("./resources/additional_student_pilot_endorsements");
+    const sport_pilot = require("./resources/sport_pilot_endorsements");
 
     //Super ugly. There is a better way but I cant be bothered.
     //TODO: Find a cleaner way to get the student_info data.
@@ -49,12 +51,12 @@ module.exports = ({
     <style>
         table{
             width: 48%;
-            height: 16%;
+            height: 14%;
             margin: 1px;
             padding: 1px;
             border: 1px solid #eee;
             font-size: 10px;
-            line-height: 14px;
+            line-height: 10px;
             font-family: "Times New Roman", Times, serif;,
              color: #555;
             display: inline-block;
@@ -136,6 +138,31 @@ ${Array(getCount(endorsements,"A15")).join(0).split(0).map(()=> `
   `).join('')}
 ${Array(getCount(endorsements,"A16")).join(0).split(0).map(()=> `
     ${endorsements.includes("A16")? additional_student_pilot.A16({studentName, gender, A16_airport, A16_limitations, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+
+${Array(getCount(endorsements,"A17")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A17")? sport_pilot.A17({studentName, gender, sport_knowledge_test, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A18")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A18")? sport_pilot.A18({studentName, gender, sport_proficiency_check, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A19")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A19")? sport_pilot.A19({studentName, gender, sport_categoryClass, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A20")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A20")? sport_pilot.A20({studentName, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A21")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A21")? sport_pilot.A21({studentName, gender, sport_categoryClass, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A22")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A22")? sport_pilot.A22({studentName, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A23")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A23")? sport_pilot.A23({studentName, gender, sport_makeModel, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A24")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A24")? sport_pilot.A24({studentName, gender, sport_makeModel, signedDate, cfiNumber, expDate}):""}
   `).join('')}
 </body>
 </html>

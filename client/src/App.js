@@ -17,18 +17,15 @@ import TSAAdditionalInfo from "./components/additional_information/TSAAdditional
 import StudentPilotAdditionalInfo from "./components/additional_information/StudentPilotAdditionalInfo";
 import AdditionalStudentPilotAdditionalInfo
     from "./components/additional_information/AdditionalStudentPilotAdditionalInfo";
+import SportPilotAdditionalInfo from "./components/additional_information/SportPilotAdditionalInfo";
 
 class App extends Component {
 
-    /*
-        *TODO: Make it so that the the select all becomes a clear all when the user has de-selects the "select All"
-        * and all the endorsements are still selected.
-     */
     constructor(props) {
         super(props);
         this.state = {
             studentName:'(First Name, MI, Last name)______________________________________',
-            gender: '(he or she)_____________',
+            gender: '(he or she)_________',
             cfiNumber: '',
             expDate: '',
             signedDate: '',
@@ -37,8 +34,8 @@ class App extends Component {
             tsa_info: '(type of document) ________________________',
             student_info: {
                 makeModel:'(Make and Model) ________________________',
-                A5_airport: '________________________',
-                A8_airport: '(airport name)________________________',
+                A5_airport: '____________________',
+                A8_airport: '(airport name)____________________',
                 A8_limitations: '________________________________',
                 category: '(category)________________________',
                 A10_origin_airport: '(origination airport)________________________',
@@ -57,14 +54,18 @@ class App extends Component {
                 A15_limitations:'(limitations)________________________________',
                 A16_airport:'(airport name)________________________',
                 A16_limitations:'(limitations)________________________________'
-            }
+            },
+            sport_makeModel: '(Make and Model) ________________________',
+            sport_proficiency_check: '(proficiency check)________________________',
+            sport_categoryClass: '(category and class)________________________',
+            sport_knowledge_test: '-________________________'
         }
 
     }
 
     handleChange = ({target: {value,name}}) =>
     {
-         // console.log("["+name+"]: "+value);
+        // console.log("["+name+"]: "+value);
         if(name === 'expDate')
         {
             this.setState({expDate: moment(value).format("MM/YYYY")});
@@ -99,26 +100,26 @@ class App extends Component {
     }
 
     handleStudentPilotAdditionalInfo = ({target: {name,value}}) =>{
-            this.setState(prevState =>({
-                student_info: {
-                    ...prevState.student_info,
-                    [name]: value
-                }
-            }))
+        this.setState(prevState =>({
+            student_info: {
+                ...prevState.student_info,
+                [name]: value
+            }
+        }))
     }
 
-  createAndDownloadPdf = () => {
-    axios.post('/create-pdf', this.state)
-        .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
-        .then((res) => {
-          const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
+    createAndDownloadPdf = () => {
+        axios.post('/create-pdf', this.state)
+            .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
+            .then((res) => {
+                const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
 
-          saveAs(pdfBlob, 'newPdf.pdf');
-        })
-  }
+                saveAs(pdfBlob, 'newPdf.pdf');
+            })
+    }
 
-  //test = () =>{console.log("Endorsements: "+this.state.endorsements)}
-    test = () =>{console.log(this.state.student_info)}
+    //test = () =>{console.log("Endorsements: "+this.state.endorsements)}
+    test = () =>{console.log(this.state)}
     render() {
         return (
             <div className="App">
@@ -173,6 +174,10 @@ class App extends Component {
                     />
                     <AdditionalStudentPilotAdditionalInfo
                         handleChange={this.handleStudentPilotAdditionalInfo}
+                        endorsements={this.state.endorsements}
+                    />
+                    <SportPilotAdditionalInfo
+                        handleChange={this.handleChange}
                         endorsements={this.state.endorsements}
                     />
 
