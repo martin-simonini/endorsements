@@ -68,6 +68,11 @@ export const recreational_pilot_endorsements = [
     {name: "Class B, C, or D airspace, at an airport located in Class B, C, or D airspace, or to, from, through, or at an airport having an operational control tower: § 61.101(d).", id: "A31"}
 ]
 
+export const private_pilot_endorsements = [
+    {name: "Aeronautical knowledge test: §§ 61.35(a)(1), 61.103(d), and 61.105.", id: "A32"},
+    {name: "Flight proficiency/practical test: §§ 61.103(f), 61.107(b), and 61.109", id: "A33"}
+]
+
 export const aircraft_make_and_model = [
     "A3",
     "A4",

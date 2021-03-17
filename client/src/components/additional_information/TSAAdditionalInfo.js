@@ -23,7 +23,7 @@ class TSAAdditionalInfo extends Component{
                         <Form className="w-50" inline>
                             <Form.Label column sm="5">Type of Document: </Form.Label>
                             <Form.Group as={Row} controlId="A14_input">
-                                <Form.Control as="select" name="repeat_select" onChange={this.handleChange} inline>
+                                <Form.Control as="select" name="repeat_select" onChange={this.handleChange} value={this.props.tsaInfo} inline>
                                     <option value="(type of document) ________________________">Leave Blank</option>
                                     <option value="U.S. birth certificate">U.S. birth certificate</option>
                                     <option value="U.S. passport">U.S. passport</option>

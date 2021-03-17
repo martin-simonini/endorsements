@@ -19,6 +19,7 @@ import AdditionalStudentPilotAdditionalInfo
     from "./components/additional_information/AdditionalStudentPilotAdditionalInfo";
 import SportPilotAdditionalInfo from "./components/additional_information/SportPilotAdditionalInfo";
 import RecreationalPilotAdditionalInfo from "./components/additional_information/RecreationalPilotAdditionalInfo";
+import PrivatePilotAdditionalInfo from "./components/additional_information/PrivatePilotAdditionalInfo";
 
 class App extends Component {
 
@@ -64,7 +65,8 @@ class App extends Component {
             A27_airport:'(airport name)________________________',
             recreational_makeModel: '(Make and Model) ________________________',
             A30_date: '________________________',
-            A30_limitations: '(limitations)________________________________'
+            A30_limitations: '(limitations)________________________________',
+            A33_practical:'_____________________'
         }
 
     }
@@ -173,10 +175,12 @@ class App extends Component {
                     <TSAAdditionalInfo
                         handleChange={this.handleProcessedChange}
                         endorsements={this.state.endorsements}
+                        tsaInfo={this.state.tsa_info}
                     />
                     <StudentPilotAdditionalInfo
                         handleChange={this.handleStudentPilotAdditionalInfo}
                         endorsements={this.state.endorsements}
+                        studentPilotInfo={this.state.student_info}
                     />
                     <AdditionalStudentPilotAdditionalInfo
                         handleChange={this.handleStudentPilotAdditionalInfo}
@@ -187,6 +191,10 @@ class App extends Component {
                         endorsements={this.state.endorsements}
                     />
                     <RecreationalPilotAdditionalInfo
+                        handleChange={this.handleChange}
+                        endorsements={this.state.endorsements}
+                    />
+                    <PrivatePilotAdditionalInfo
                         handleChange={this.handleChange}
                         endorsements={this.state.endorsements}
                     />

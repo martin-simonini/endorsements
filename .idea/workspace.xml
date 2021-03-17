@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca7c9b1-ae6c-45f4-873d-1850cd05a937" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/additional_information/PrivatePilotAdditionalInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/documents/resources/private_pilot_endorsements.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/RecreationalPilotAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/RecreationalPilotAdditionalInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/GenericAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/GenericAdditionalInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/SportPilotAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/SportPilotAdditionalInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/StudentPilotAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/StudentPilotAdditionalInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/TSAAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/TSAAdditionalInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/endorsement_selection/EndorsementSelection.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/endorsement_selection/EndorsementSelection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/endorsement_selection/Endorsements.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/endorsement_selection/Endorsements.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/endorsement_selection/RepeatEndorsement.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/endorsement_selection/RepeatEndorsement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/resources/Endorsements_Data.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/resources/Endorsements_Data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/documents/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +110,7 @@
       <workItem from="1614052425250" duration="15146000" />
       <workItem from="1614188365771" duration="2008000" />
       <workItem from="1615872870674" duration="12254000" />
-      <workItem from="1615952890336" duration="10216000" />
+      <workItem from="1615952890336" duration="12866000" />
     </task>
     <task id="LOCAL-00001" summary="rewrote the setEndorsementPool method and added to the more endorsements.">
       <created>1609533432792</created>
@@ -182,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615962027741</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fixed issues with Student and Recreational pilot date selection as well as fixed render issue in Endorsement class.">
+      <created>1615999648065</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1615999648065</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +243,7 @@
     <MESSAGE value="Made event handler in app.js for student pilot additional info. Began work on universal add. change." />
     <MESSAGE value="Finished additional info section for student pilot endorsements. Began working on including the add. info to the backend." />
     <MESSAGE value="Added Recreational Pilot endorsements." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Recreational Pilot endorsements." />
+    <MESSAGE value="Fixed issues with Student and Recreational pilot date selection as well as fixed render issue in Endorsement class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed issues with Student and Recreational pilot date selection as well as fixed render issue in Endorsement class." />
   </component>
 </project>

@@ -43,7 +43,7 @@ class SportPilotAdditionalInfo extends Component{
                             </Form.Group>
                             }
                             {this.props.endorsements.includes("A18") &&
-                            <Form.Group as={Row} controlId="A2_test_input">
+                            <Form.Group as={Row} controlId="A18_proficiency">
                                 <Form.Label column md="5">[A18] Proficiency Check type: </Form.Label>
                                 <Col md="7">
                                     <Form.Control type="text" name="sport_proficiency_check" onChange={this.props.handleChange}
@@ -52,7 +52,7 @@ class SportPilotAdditionalInfo extends Component{
                             </Form.Group>
                             }
                             {this.props.endorsements.some(i => aircraft_category.includes(i)) &&
-                            <Form.Group as={Row} inline controlId="soloXC">
+                            <Form.Group as={Row} inline controlId="sport_CatClass">
                                 <Form.Label column md={4}>Aircraft Category and Class: </Form.Label>
                                 <Col md={8}>
                                     <Form.Control
@@ -81,7 +81,7 @@ class SportPilotAdditionalInfo extends Component{
                             </Form.Group>
                             }*/}
                             {this.props.endorsements.some(i => aircraft_make_and_model.includes(i)) &&
-                            <Form.Group as={Row} inline controlId="sportPractical">
+                            <Form.Group as={Row} inline controlId="sport_makeModel">
                                 <Form.Label column md={4}>Aircraft Make and Model: </Form.Label>
                                 <Col md={8}>
                                     <Form.Control

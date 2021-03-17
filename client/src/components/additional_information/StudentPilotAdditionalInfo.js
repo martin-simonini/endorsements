@@ -61,7 +61,7 @@ class StudentPilotAdditionalInfo extends Component{
                     </Row>
                     <Form>
                         {this.props.endorsements.some(i => aircraft_make_and_model.includes(i))&&
-                        <Form.Group as={Row} inline controlId="makeAndModel">
+                        <Form.Group as={Row} inline controlId="student_makeAndModel">
                             <Form.Label column md={4}>Aircraft Make and Model: </Form.Label>
                             <Col md={8}>
                                 <Form.Control
@@ -82,7 +82,7 @@ class StudentPilotAdditionalInfo extends Component{
                         </Form.Group>
                         }
                         {this.props.endorsements.includes("A9")&&
-                        <Form.Group as={Row} inline controlId="soloXC">
+                        <Form.Group as={Row} inline controlId="A9_cat">
                             <Form.Label column md={4}>Aircraft Category: </Form.Label>
                             <Col md={8}>
                                 <Form.Control

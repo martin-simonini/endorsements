@@ -46,6 +46,7 @@ class GenericAdditionalInfo extends Component{
                                         onChange={this.handleChange}
                                         placeholder="e.g. 'private pilot' or 'instrument-airplane"
                                         className="w-100"
+                                        value={this.state.A1}
                                     />
                                 </Col>
                             </Form.Group>
@@ -54,7 +55,13 @@ class GenericAdditionalInfo extends Component{
                             <Form.Group as={Row} controlId="A2_test_input">
                                 <Form.Label column md="5">Airman knowledge test: </Form.Label>
                                 <Col md="7">
-                                    <Form.Control type="text" name="A2Input" onChange={this.handleChange} placeholder="e.g. 'private pilot'" className="w-100"/>
+                                    <Form.Control
+                                        type="text"
+                                        name="A2Input"
+                                        value={this.state.A2}
+                                        onChange={this.handleChange}
+                                        placeholder="e.g. 'private pilot'"
+                                        className="w-100"/>
                                 </Col>
                             </Form.Group>
                         }

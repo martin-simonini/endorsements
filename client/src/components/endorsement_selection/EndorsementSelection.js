@@ -58,7 +58,8 @@ class EndorsementSelection extends Component{
                             <Accordion.Collapse eventKey={(index+1)}>
                                 <Card.Body>
                                     <div>
-                                        <Endorsements category={cat}
+                                        <Endorsements key={index.toString()}
+                                                      category={cat}
                                                       addEndorsements={this.props.addEndorsements}
                                                       setEndorsements={this.props.setEndorsements}
                                                       removeEndorsements={this.props.removeEndorsements}
