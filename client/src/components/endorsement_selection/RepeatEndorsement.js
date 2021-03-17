@@ -99,7 +99,8 @@ class RepeatEndorsement extends React.Component {
                     <Form.Label className={"pr-3 " + displayRepeat}>Amount:</Form.Label>
                     <Form.Control as="select" name="repeat_select" onChange={(e) => this.handleChange(e)}
                                   value={this.state.repeatSelectValue}
-                                  custom inline
+                                  custom
+                                  inline="true"
                                   className={"my-1 mx-2 w-20 " + displayRepeat}>
                         <option value="full_page">Full Page</option>
                         <option value="half_page">Half Page</option>

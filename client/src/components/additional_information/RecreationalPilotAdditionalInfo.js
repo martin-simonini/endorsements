@@ -11,7 +11,8 @@ class RecreationalPilotAdditionalInfo extends Component{
 
     state = {
         knowledgeSelected: "",
-        date: null
+        date: null,
+        leaveBlank: false
     }
 
     knowledgeChangeHandler = (event) => {
@@ -24,6 +25,17 @@ class RecreationalPilotAdditionalInfo extends Component{
     DateChangeHandler = (date) =>{
         this.setState({date: date});
         this.props.handleChange({target: {name:"A30_date", value: moment(date).format("MM/DD/YYYY")}});
+    }
+
+    /*Updates the "leave blank" button. When selected it should disable the date selection and push the default value
+    * to App.js*/
+    leaveBlankHandler = () =>{
+        if(!this.state.leaveBlank) { //Going from not clicked to clicked (User wants to disable date selection)
+            this.props.handleChange({target: {name: "A30_date", value:"________________________"}});
+            this.setState(prevState => ({date: null, leaveBlank: !prevState.leaveBlank}));
+        }
+        else //Enable date selection. Only needs to make the date button clickable.
+            this.setState(prevState => ({leaveBlank: !prevState.leaveBlank}));
     }
 
     render(){
@@ -86,8 +98,7 @@ class RecreationalPilotAdditionalInfo extends Component{
                                     />
                                 </Col>
                                 <Col md={2}>
-                                    {/*TODO: Fix. It isn't resetting the date*/}
-                                    <Form.Check name="leaveBlank" label="Leave Blank" className="pr-5" onChange={this.showDate} checked={this.state.leaveBlank}/>
+                                    <Form.Check name="leaveBlank" label="Leave Blank" className="pr-5" onChange={this.leaveBlankHandler} checked={this.state.leaveBlank}/>
                                 </Col>
                             </Form.Group>
                             }

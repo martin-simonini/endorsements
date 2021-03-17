@@ -145,10 +145,29 @@ class Endorsements extends Component{
         }));
     }
 
+    componentDidMount() {
+        let newPool = [];
+
+        if(this.props.category === "GENERIC")
+            newPool = generic_endorsements;
+        else if(this.props.category === "TRANSPORTATION SECURITY ADMINISTRATION (TSA) ENDORSEMENT")
+            newPool = tsa_endorsement;
+        else if(this.props.category === "STUDENT PILOT ENDORSEMENTS")
+            newPool = student_pilot_endorsements;
+        else if( this.props.category === "ADDITIONAL STUDENT PILOT ENDORSEMENTS FOR STUDENTS SEEKING SPORT OR RECREATIONAL PILOT CERTIFICATES")
+            newPool = additional_student_pilot_endorsements;
+        else if( this.props.category === "SPORT PILOT ENDORSEMENTS")
+            newPool = sport_pilot_endorsements;
+        else if( this.props.category === "RECREATIONAL PILOT ENDORSEMENTS")
+            newPool = recreational_pilot_endorsements;
+
+        //Verify endorsement_pool is not already set. May want to use something more robust than JSON.Stringify
+        if(JSON.stringify(newPool) !== JSON.stringify(this.state.endorsement_pool)){
+            this.setState({endorsement_pool: newPool});
+        }
+    }
+
     render() {
-        this.setEndorsementPool(this.props.category);
-
-
         return(
             <>
                 <Container>
