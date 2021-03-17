@@ -85,6 +85,16 @@ export const instrument_rating_endorsements = [
     {name: "Prerequisites for instrument practical tests: § 61.39(a)", id: "A40"}
 ]
 
+export const flight_instructor_endorsements = [
+    {name: "Fundamentals of instructing knowledge test: § 61.183(d). ", id: "A41"},
+    {name: "Flight instructor aeronautical knowledge test: § 61.183(f). ", id: "A42"},
+    {name: "Flight instructor ground and flight proficiency/practical test: § 61.183(g).", id: "A43"},
+    {name: "Flight instructor certificate with instrument—(category/class) rating/practical test: §§ 61.183(g), and 61.187(a) and (b)(7).", id: "A44"},
+    {name: "Spin training: § 61.183(i)(1)", id: "A45"},
+    {name: "Helicopter Touchdown Autorotation: FAA-S-8081-7, Flight Instructor Practical Test Standards for Rotorcraft (Helicopter & Gyroplane).", id: "A46"},
+
+]
+
 export const aircraft_make_and_model = [
     "A3",
     "A4",

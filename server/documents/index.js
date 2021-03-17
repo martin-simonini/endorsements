@@ -10,7 +10,8 @@ const getCount = (array, item) =>{
 module.exports = ({
                       studentName, gender, cfiNumber, expDate, signedDate, endorsements, generic_info, tsa_info, student_info,
                       sport_makeModel,sport_proficiency_check,sport_categoryClass,sport_knowledge_test, recreational_knowledge_test,
-                      A27_airport,recreational_makeModel,A30_date,A30_limitations, A33_practical, A35_practical, instrument_category
+                      A27_airport,recreational_makeModel,A30_date,A30_limitations, A33_practical, A35_practical, instrument_category,
+                      A43_catClass,A44_practical,A45_practical
                   }) => {
 
     const generic = require("./resources/generic_endorsements");
@@ -22,6 +23,7 @@ module.exports = ({
     const private_pilot = require("./resources/private_pilot_endorsements");
     const commercial_pilot = require("./resources/commercial_pilot_endorsements");
     const instrument_rating = require("./resources/instrument_rating_endorsements");
+    const flight_instructor = require("./resources/flight_instructor_endorsements");
 
     //Super ugly. There is a better way but I cant be bothered.
     //TODO: Find a cleaner way to get the student_info data.
@@ -211,7 +213,26 @@ ${Array(getCount(endorsements,"A39")).join(0).split(0).map(()=> `
 ${Array(getCount(endorsements,"A40")).join(0).split(0).map(()=> `
     ${endorsements.includes("A40")? instrument_rating.A40({studentName, gender, instrument_category, signedDate, cfiNumber, expDate}):""}
   `).join('')}
+${Array(getCount(endorsements,"A41")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A41")? flight_instructor.A41({studentName, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A42")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A42")? flight_instructor.A42({studentName, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A43")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A43")? flight_instructor.A43({studentName, gender, A43_catClass, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A44")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A44")? flight_instructor.A44({studentName, gender, A44_practical, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A45")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A45")? flight_instructor.A45({studentName, gender, A45_practical, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A46")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A46")? flight_instructor.A46({studentName, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
 </body>
 </html>
 `;
 };
+

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca7c9b1-ae6c-45f4-873d-1850cd05a937" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/additional_information/InstrumentRatingAdditionalInfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/documents/resources/instrument_rating_endorsements.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/additional_information/FlightInstructorAdditionalInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/documents/resources/flight_instructor_endorsements.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
@@ -106,7 +106,7 @@
       <workItem from="1614052425250" duration="15146000" />
       <workItem from="1614188365771" duration="2008000" />
       <workItem from="1615872870674" duration="12254000" />
-      <workItem from="1615952890336" duration="14621000" />
+      <workItem from="1615952890336" duration="16913000" />
     </task>
     <task id="LOCAL-00001" summary="rewrote the setEndorsementPool method and added to the more endorsements.">
       <created>1609533432792</created>
@@ -206,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616002975709</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added Instrument Rating endorsements.">
+      <created>1616004017585</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1616004017585</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,6 +263,7 @@
     <MESSAGE value="Fixed issues with Student and Recreational pilot date selection as well as fixed render issue in Endorsement class." />
     <MESSAGE value="Added Private Pilot endorsements." />
     <MESSAGE value="Added Commercial Pilot endorsements." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Commercial Pilot endorsements." />
+    <MESSAGE value="Added Instrument Rating endorsements." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Instrument Rating endorsements." />
   </component>
 </project>
