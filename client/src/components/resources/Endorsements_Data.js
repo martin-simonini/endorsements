@@ -8,7 +8,8 @@ export const categories = [
     "RECREATIONAL PILOT ENDORSEMENTS",
     "PRIVATE PILOT ENDORSEMENTS",
     "COMMERCIAL PILOT ENDORSEMENTS",
-    "AIRLINE TRANSPORT PILOT (ATP) ENDORSEMENTS",
+    /*Removing ATP endorsements as you need a LOA. We assume the institution will have their own endorsements.*/
+    /*"AIRLINE TRANSPORT PILOT (ATP) ENDORSEMENTS",*/
     "INSTRUMENT RATING ENDORSEMENTS",
     "FLIGHT INSTRUCTOR (OTHER THAN FLIGHT INSTRUCTORS WITH A SPORT PILOT RATING) ENDORSEMENTS",
     "FLIGHT INSTRUCTOR WITH A SPORT PILOT RATING ENDORSEMENT",
@@ -76,6 +77,12 @@ export const private_pilot_endorsements = [
 export const commercial_pilot_endorsements = [
     {name: "Aeronautical knowledge test: §§ 61.35(a)(1), 61.123(c), and 61.125. ", id: "A34"},
     {name: "Flight proficiency/practical test: §§ 61.123(e), 61.127, and 61.129.", id: "A35"}
+]
+
+export const instrument_rating_endorsements = [
+    {name: "Aeronautical knowledge test: §§ 61.35(a)(1) and 61.65(a) and (b).", id: "A38"},
+    {name: "Flight proficiency/practical test: § 61.65(a)(6).", id: "A39"},
+    {name: "Prerequisites for instrument practical tests: § 61.39(a)", id: "A40"}
 ]
 
 export const aircraft_make_and_model = [
