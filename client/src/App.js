@@ -18,6 +18,7 @@ import StudentPilotAdditionalInfo from "./components/additional_information/Stud
 import AdditionalStudentPilotAdditionalInfo
     from "./components/additional_information/AdditionalStudentPilotAdditionalInfo";
 import SportPilotAdditionalInfo from "./components/additional_information/SportPilotAdditionalInfo";
+import RecreationalPilotAdditionalInfo from "./components/additional_information/RecreationalPilotAdditionalInfo";
 
 class App extends Component {
 
@@ -58,7 +59,12 @@ class App extends Component {
             sport_makeModel: '(Make and Model) ________________________',
             sport_proficiency_check: '(proficiency check)________________________',
             sport_categoryClass: '(category and class)________________________',
-            sport_knowledge_test: '-________________________'
+            sport_knowledge_test: '-________________________',
+            recreational_knowledge_test: '________________________',
+            A27_airport:'(airport name)________________________',
+            recreational_makeModel: '(Make and Model) ________________________',
+            A30_date: '________________________',
+            A30_limitations: '(limitations)________________________________'
         }
 
     }
@@ -177,6 +183,10 @@ class App extends Component {
                         endorsements={this.state.endorsements}
                     />
                     <SportPilotAdditionalInfo
+                        handleChange={this.handleChange}
+                        endorsements={this.state.endorsements}
+                    />
+                    <RecreationalPilotAdditionalInfo
                         handleChange={this.handleChange}
                         endorsements={this.state.endorsements}
                     />

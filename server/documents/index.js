@@ -9,7 +9,8 @@ const getCount = (array, item) =>{
 
 module.exports = ({
                       studentName, gender, cfiNumber, expDate, signedDate, endorsements, generic_info, tsa_info, student_info,
-                      sport_makeModel,sport_proficiency_check,sport_categoryClass,sport_knowledge_test
+                      sport_makeModel,sport_proficiency_check,sport_categoryClass,sport_knowledge_test, recreational_knowledge_test,
+                      A27_airport,recreational_makeModel,A30_date,A30_limitations
                   }) => {
 
     const generic = require("./resources/generic_endorsements");
@@ -17,6 +18,7 @@ module.exports = ({
     const tsa = require("./resources/tsa_endorsements")
     const additional_student_pilot = require("./resources/additional_student_pilot_endorsements");
     const sport_pilot = require("./resources/sport_pilot_endorsements");
+    const recreational_pilot = require("./resources/recreational_pilot_endorsements");
 
     //Super ugly. There is a better way but I cant be bothered.
     //TODO: Find a cleaner way to get the student_info data.
@@ -163,6 +165,27 @@ ${Array(getCount(endorsements,"A23")).join(0).split(0).map(()=> `
   `).join('')}
 ${Array(getCount(endorsements,"A24")).join(0).split(0).map(()=> `
     ${endorsements.includes("A24")? sport_pilot.A24({studentName, gender, sport_makeModel, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A25")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A25")? recreational_pilot.A25({studentName, gender, recreational_knowledge_test, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A26")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A26")? recreational_pilot.A26({studentName, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A27")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A27")? recreational_pilot.A27({studentName, gender, A27_airport, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A28")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A28")? recreational_pilot.A28({studentName, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A29")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A29")? recreational_pilot.A29({studentName, gender, recreational_makeModel, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A30")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A30")? recreational_pilot.A30({studentName, gender, recreational_makeModel, A30_date, A30_limitations, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A31")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A31")? recreational_pilot.A31({studentName, gender, signedDate, cfiNumber, expDate}):""}
   `).join('')}
 </body>
 </html>

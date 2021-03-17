@@ -10,7 +10,7 @@ import {
     tsa_endorsement,
     student_pilot_endorsements,
     additional_student_pilot_endorsements,
-    sport_pilot_endorsements
+    sport_pilot_endorsements, recreational_pilot_endorsements
 } from '../resources/Endorsements_Data';
 import RepeatEndorsement from "./RepeatEndorsement";
 
@@ -107,6 +107,8 @@ class Endorsements extends Component{
             newPool = additional_student_pilot_endorsements;
         else if( cat === "SPORT PILOT ENDORSEMENTS")
             newPool = sport_pilot_endorsements;
+        else if( cat === "RECREATIONAL PILOT ENDORSEMENTS")
+            newPool = recreational_pilot_endorsements;
 
         //Verify endorsement_pool is not already set. May want to use something more robust than JSON.Stringify
         if(JSON.stringify(newPool) !== JSON.stringify(this.state.endorsement_pool)){

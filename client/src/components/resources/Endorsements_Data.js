@@ -58,24 +58,37 @@ export const sport_pilot_endorsements = [
     {name: "Light-sport aircraft that has a VH greater than 87 KCAS: § 61.327. ", id: "A24"},
 ]
 
+export const recreational_pilot_endorsements = [
+    {name: "Aeronautical knowledge test: §§ 61.35(a)(1), 61.96(b)(3), and 61.97(b).", id: "A25"},
+    {name: "Flight proficiency/practical test: §§ 61.96(b)(5), 61.98(a) and (b), and 61.99", id: "A26"},
+    {name: "Recreational pilot to operate within 50 NM of the airport where training was received: § 61.101(b)", id: "A27"},
+    {name: "Recreational pilot to act as pilot in command on a flight that exceeds 50 NM of the departure airport: § 61.101(c)", id: "A28"},
+    {name: "Recreational pilot with less than 400 flight hours and no logged pilot in command time within the preceding 180 calendar-days: § 61.101(g).", id: "A29"},
+    {name: "Recreational pilot to conduct solo flights for the purpose of obtaining an additional certificate or rating while under the supervision of an authorized flight instructor: § 61.101(j).", id: "A30"},
+    {name: "Class B, C, or D airspace, at an airport located in Class B, C, or D airspace, or to, from, through, or at an airport having an operational control tower: § 61.101(d).", id: "A31"}
+]
+
 export const aircraft_make_and_model = [
     "A3",
     "A4",
     "A6",
     "A7",
     "A9",
-
     "A23",
-    "A24"
+    "A24",
+    "A29",
+    "A30"
 ]
 
 export const airport = [
     "A5",
     "A8",
+    "A27"
 ]
 
 export const limitations = [
     "A8",
+    "A30"
 ]
 
 export const aircraft_category = [
