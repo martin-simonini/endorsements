@@ -95,6 +95,17 @@ export const flight_instructor_endorsements = [
 
 ]
 
+export const sport_flight_instructor_endorsements = [
+    {name: "Fundamentals of instructing knowledge test: § 61.405(a)(1). ", id: "A47"},
+    {name: "Sport pilot flight instructor aeronautical knowledge test: §§ 61.35(a)(1) and 61.405(a).", id: "A48"},
+    {name: "Flight instructor flight proficiency check to provide training if a different category or class of aircraft–(additional category/class): §§ 61.409 and 61.419.", id: "A49"},
+    {name: "Passing the flight instructor flight proficiency check to provide training in a different category or class of aircraft (additional category/class): §§ 61.409 and 61.419.", id: "A50"},
+    {name: "Flight instructor practical test: §§ 61.409 and 61.411.", id: "A51"},
+    {name: "Passing the flight instructor practical test: §§ 61.409 and 61.411", id: "A52"},
+    {name: "Sport pilot instructor to train sport pilots on flight by reference to instruments: § 61.412.", id: "A53"},
+    {name: "Spin training: § 61.405(b)(1)(ii)", id: "A54"},
+]
+
 export const aircraft_make_and_model = [
     "A3",
     "A4",

@@ -14,7 +14,7 @@ import {
     recreational_pilot_endorsements,
     private_pilot_endorsements,
     commercial_pilot_endorsements,
-    instrument_rating_endorsements, flight_instructor_endorsements
+    instrument_rating_endorsements, flight_instructor_endorsements, sport_flight_instructor_endorsements
 } from '../resources/Endorsements_Data';
 import RepeatEndorsement from "./RepeatEndorsement";
 
@@ -172,6 +172,8 @@ class Endorsements extends Component{
             newPool = instrument_rating_endorsements;
         else if( this.props.category === "FLIGHT INSTRUCTOR (OTHER THAN FLIGHT INSTRUCTORS WITH A SPORT PILOT RATING) ENDORSEMENTS")
             newPool = flight_instructor_endorsements;
+        else if( this.props.category === "FLIGHT INSTRUCTOR WITH A SPORT PILOT RATING ENDORSEMENT")
+            newPool = sport_flight_instructor_endorsements;
 
         //Verify endorsement_pool is not already set. May want to use something more robust than JSON.Stringify
         if(JSON.stringify(newPool) !== JSON.stringify(this.state.endorsement_pool)){
