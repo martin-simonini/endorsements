@@ -23,6 +23,8 @@ import PrivatePilotAdditionalInfo from "./components/additional_information/Priv
 import CommercialPilotAdditionalInfo from "./components/additional_information/CommercialPilotAdditionalInfo";
 import InstrumentRatingAdditionalInfo from "./components/additional_information/InstrumentRatingAdditionalInfo";
 import FlightInstructorAdditionalInfo from "./components/additional_information/FlightInstructorAdditionalInfo";
+import SportFlightInstructorAdditionalInfo
+    from "./components/additional_information/SportFlightInstructorAdditionalInfo";
 
 class App extends Component {
 
@@ -74,7 +76,9 @@ class App extends Component {
             instrument_category:'_____________________',
             A43_catClass:'_____________________',
             A44_practical:'_____________________',
-            A45_practical:'_____________________'
+            A45_practical:'_____________________',
+            sport_CFI_catClass: '_____________________',
+            A48_class: '_____________________'
         }
 
     }
@@ -215,6 +219,10 @@ class App extends Component {
                         endorsements={this.state.endorsements}
                     />
                     <FlightInstructorAdditionalInfo
+                        handleChange={this.handleChange}
+                        endorsements={this.state.endorsements}
+                    />
+                    <SportFlightInstructorAdditionalInfo
                         handleChange={this.handleChange}
                         endorsements={this.state.endorsements}
                     />
