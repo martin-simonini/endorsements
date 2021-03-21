@@ -106,6 +106,10 @@ export const sport_flight_instructor_endorsements = [
     {name: "Spin training: § 61.405(b)(1)(ii)", id: "A54"},
 ]
 
+export const ground_instructor_endorsements = [
+    {name: "Ground instructor who does not meet the recent experience requirements", id: "A55"}
+]
+
 export const aircraft_make_and_model = [
     "A3",
     "A4",

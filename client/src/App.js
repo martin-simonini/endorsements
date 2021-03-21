@@ -25,6 +25,7 @@ import InstrumentRatingAdditionalInfo from "./components/additional_information/
 import FlightInstructorAdditionalInfo from "./components/additional_information/FlightInstructorAdditionalInfo";
 import SportFlightInstructorAdditionalInfo
     from "./components/additional_information/SportFlightInstructorAdditionalInfo";
+import GroundInstructorAdditionalInfo from "./components/additional_information/GroundInstructorAdditionalInfo";
 
 class App extends Component {
 
@@ -226,7 +227,10 @@ class App extends Component {
                         handleChange={this.handleChange}
                         endorsements={this.state.endorsements}
                     />
-
+                    <GroundInstructorAdditionalInfo
+                        handleChange={this.handleChange}
+                        endorsements={this.state.endorsements}
+                    />
                 </Container>
                 <Container>
                     <Row>

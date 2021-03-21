@@ -11,7 +11,7 @@ module.exports = ({
                       studentName, gender, cfiNumber, expDate, signedDate, endorsements, generic_info, tsa_info, student_info,
                       sport_makeModel,sport_proficiency_check,sport_categoryClass,sport_knowledge_test, recreational_knowledge_test,
                       A27_airport,recreational_makeModel,A30_date,A30_limitations, A33_practical, A35_practical, instrument_category,
-                      A43_catClass,A44_practical,A45_practical, A48_class, sport_CFI_catClass
+                      A43_catClass,A44_practical,A45_practical, A48_class, sport_CFI_catClass, A55_type
                   }) => {
 
     const generic = require("./resources/generic_endorsements");
@@ -25,6 +25,7 @@ module.exports = ({
     const instrument_rating = require("./resources/instrument_rating_endorsements");
     const flight_instructor = require("./resources/flight_instructor_endorsements");
     const sport_cfi = require("./resources/sport_flight_instructor_endorsements");
+    const ground_instructor = require("./resources/ground_instructor_endorsements");
 
     //Super ugly. There is a better way but I cant be bothered.
     //TODO: Find a cleaner way to get the student_info data.
@@ -255,6 +256,9 @@ ${Array(getCount(endorsements,"A53")).join(0).split(0).map(()=> `
   `).join('')}
 ${Array(getCount(endorsements,"A54")).join(0).split(0).map(()=> `
     ${endorsements.includes("A54")? sport_cfi.A54({studentName, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A55")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A55")? ground_instructor.A55({studentName, A55_type, signedDate, cfiNumber, expDate}):""}
   `).join('')}
 </body>
 </html>
