@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Row, Col, Form } from 'react-bootstrap';
+import {additional_student_pilot_endorsements} from "../resources/Endorsements_Data";
 
 
 class AdditionalStudentPilotAdditionalInfo extends Component{
 
     render() {
-        //List of endorsement ids associated with student pilots to check if add. info needs to be displayed.
-        const additional_student_pilot_endorsements = ["A15","A16"];
-
-        if(this.props.endorsements.some(i => additional_student_pilot_endorsements.includes(i)))
+        if(additional_student_pilot_endorsements.some(i => this.props.endorsements.includes(i.id)))
         {
             return (
                 <>

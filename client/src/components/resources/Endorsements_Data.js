@@ -122,6 +122,8 @@ export const robinson_endorsements = [
     {name: "Flight review in an R-44 helicopter: SFAR 73, section 2(c)(2) and (3). \n", id: "A64"},
 ]
 
+export const additional_endorsements = []
+
 export const aircraft_make_and_model = [
     "A3",
     "A4",

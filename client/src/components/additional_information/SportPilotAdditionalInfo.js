@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import {aircraft_category, aircraft_make_and_model} from "../resources/Endorsements_Data";
+import {
+    aircraft_category,
+    aircraft_make_and_model,
+    sport_pilot_endorsements
+} from "../resources/Endorsements_Data";
 import { Row, Col, Form } from 'react-bootstrap';
 
 
@@ -19,8 +23,8 @@ class SportPilotAdditionalInfo extends Component{
     }
 
     render(){
-        const endorsements = ["A18","A19","A20","A21","A22","A23","A24"];
-        if(this.props.endorsements.some(i => endorsements.includes(i))) {
+        if(sport_pilot_endorsements.some(i => this.props.endorsements.includes(i.id)))
+        {
             return (
                 <>
                     <Row className="mb-4">

@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca7c9b1-ae6c-45f4-873d-1850cd05a937" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/additional_information/RobinsonAdditionalInfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/documents/resources/robinson_endorsements.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/endorsement_selection/Endorsements.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/endorsement_selection/Endorsements.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/AdditionalStudentPilotAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/AdditionalStudentPilotAdditionalInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/FlightInstructorAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/FlightInstructorAdditionalInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/RecreationalPilotAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/RecreationalPilotAdditionalInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/SportFlightInstructorAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/SportFlightInstructorAdditionalInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/SportPilotAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/SportPilotAdditionalInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/StudentPilotAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/StudentPilotAdditionalInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/resources/Endorsements_Data.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/resources/Endorsements_Data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/documents/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/documents/resources/student_pilot_endorsements.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/resources/student_pilot_endorsements.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/result.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/server/result.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +111,7 @@
       <workItem from="1616047716167" duration="464000" />
       <workItem from="1616048244270" duration="175000" />
       <workItem from="1616048437967" duration="4975000" />
-      <workItem from="1616291125076" duration="8613000" />
+      <workItem from="1616291125076" duration="9897000" />
     </task>
     <task id="LOCAL-00001" summary="rewrote the setEndorsementPool method and added to the more endorsements.">
       <created>1609533432792</created>
@@ -240,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616292852170</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Robinson R-22/R-44 Endorsements added.">
+      <created>1616309233089</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1616309233089</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,6 +300,8 @@
     <MESSAGE value="Added Flight Instructor endorsements." />
     <MESSAGE value="Finished Sport Flight Instructor Endorsements." />
     <MESSAGE value="Ground Instructor Endorsements added." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ground Instructor Endorsements added." />
+    <MESSAGE value="Robinson R-22/R-44 Endorsements added." />
+    <MESSAGE value="Simplified the additional info selection mechanism." />
+    <option name="LAST_COMMIT_MESSAGE" value="Simplified the additional info selection mechanism." />
   </component>
 </project>

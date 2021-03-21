@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Form } from 'react-bootstrap';
+import { sport_flight_instructor_endorsements} from "../resources/Endorsements_Data";
 
 
 class SportFlightInstructorAdditionalInfo extends Component{
@@ -25,8 +26,7 @@ class SportFlightInstructorAdditionalInfo extends Component{
 
 
     render(){
-        const endorsements = ["A48","A49","A50","A50","A51","A52"];
-        if(this.props.endorsements.some(i => endorsements.includes(i))) {
+        if(sport_flight_instructor_endorsements.some(i => this.props.endorsements.includes(i.id))){
             return (
                 <>
                     <Row className="mb-4">
@@ -34,7 +34,7 @@ class SportFlightInstructorAdditionalInfo extends Component{
                     </Row>
                     <Row>
                         <Form className="w-50">
-                            {endorsements.includes("A48")&&
+                            {this.props.endorsements.includes("A48")&&
                             <Form.Group as={Row} inline controlId="classBCD">
                                 <Form.Label column md={4}>Aircraft Class: </Form.Label>
                                 <Col md="7">
@@ -48,7 +48,7 @@ class SportFlightInstructorAdditionalInfo extends Component{
                                 </Col>
                             </Form.Group>
                             }
-                            {this.props.endorsements.some(i => i !== "A43" && endorsements.includes(i))&&
+                            {this.props.endorsements.some(i => i !== "A43" && this.props.endorsements.includes(i))&&
                             <Form.Group as={Row}>
                                 <Form.Label column md="5">Category and Class: </Form.Label>
                                 <Col md="7">

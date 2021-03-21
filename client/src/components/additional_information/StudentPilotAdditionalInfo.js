@@ -3,7 +3,10 @@ import DatePicker from 'react-datepicker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import moment from 'moment';
 
-import {aircraft_make_and_model} from "../resources/Endorsements_Data";
+import {
+    aircraft_make_and_model,
+    student_pilot_endorsements
+} from "../resources/Endorsements_Data";
 import { Row, Col, Form } from 'react-bootstrap';
 
 
@@ -49,10 +52,8 @@ class StudentPilotAdditionalInfo extends Component{
     }
 
     render() {
-        //List of endorsement ids associated with student pilots to check if add. info needs to be displayed.
-        const student_pilot_endorsements = ["A3","A4","A5","A6","A7","A8","A9","A10","A11","A12","A13"];
 
-        if(this.props.endorsements.some(i => student_pilot_endorsements.includes(i)))
+        if(student_pilot_endorsements.some(i => this.props.endorsements.includes(i.id)))
         {
             return (
                 <>

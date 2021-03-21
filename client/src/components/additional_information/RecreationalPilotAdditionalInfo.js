@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import {aircraft_category, aircraft_make_and_model} from "../resources/Endorsements_Data";
+import {
+    aircraft_make_and_model,
+    recreational_pilot_endorsements,
+} from "../resources/Endorsements_Data";
 import { Row, Col, Form } from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import moment from "moment";
@@ -39,8 +42,7 @@ class RecreationalPilotAdditionalInfo extends Component{
     }
 
     render(){
-        const endorsements = ["A25","A26","A27","A28","A29","A30","A31"];
-        if(this.props.endorsements.some(i => endorsements.includes(i))) {
+        if(recreational_pilot_endorsements.some(i => this.props.endorsements.includes(i.id))){
             return (
                 <>
                     <Row className="mb-4">

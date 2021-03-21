@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Form } from 'react-bootstrap';
+import {flight_instructor_endorsements} from "../resources/Endorsements_Data";
 
 
 class FlightInstructorAdditionalInfo extends Component{
@@ -32,8 +33,7 @@ class FlightInstructorAdditionalInfo extends Component{
 
 
     render(){
-        const endorsements = ["A43","A44","A45","A46"];
-        if(this.props.endorsements.some(i => endorsements.includes(i))) {
+        if(flight_instructor_endorsements.some(i => this.props.endorsements.includes(i.id))){
             return (
                 <>
                     <Row className="mb-4">
