@@ -1,6 +1,6 @@
 const A3 = ({studentName, makeModel, signedDate, cfiNumber, expDate}) => {
     return `
-    <table class="floatLeft">
+    <table>
         <tr>
             <td class="title">
                 Pre-solo aeronautical knowledge: § 61.87(b)
@@ -24,7 +24,7 @@ const A3 = ({studentName, makeModel, signedDate, cfiNumber, expDate}) => {
 
 const A4 = ({studentName, makeModel, gender, signedDate, cfiNumber, expDate}) => {
     return`
-    <table class="floatRight">
+    <table>
         <tr>
             <td class="title">
                 Pre-solo flight training: § 61.87(c)(1) and (2).

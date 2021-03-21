@@ -110,6 +110,18 @@ export const ground_instructor_endorsements = [
     {name: "Ground instructor who does not meet the recent experience requirements", id: "A55"}
 ]
 
+export const robinson_endorsements = [
+    {name: "R-22/R-44 awareness training: SFAR 73, section 2(a)(1) or (2). ", id: "A56"},
+    {name: "R-22 solo endorsement: SFAR 73, section 2(b)(3). ", id: "A57"},
+    {name: "R-22 pilot-in-command endorsement: SFAR 73, section 2(b)(1)(ii).", id: "A58"},
+    {name: "R-22 flight instructor endorsement: SFAR 73, section 2(b)(5)(iv).", id: "A59"},
+    {name: "Flight review in an R-22 helicopter: SFAR 73, section 2(c)(1) and (3)", id: "A60"},
+    {name: "R-44 solo endorsement: SFAR 73, section 2(b)(4).", id: "A61"},
+    {name: "R-44 pilot-in-command endorsement: SFAR 73, section 2(b)(2)(ii).", id: "A62"},
+    {name: "R-44 flight instructor endorsement: SFAR 73, section 2(b)(5)(iv).", id: "A63"},
+    {name: "Flight review in an R-44 helicopter: SFAR 73, section 2(c)(2) and (3). \n", id: "A64"},
+]
+
 export const aircraft_make_and_model = [
     "A3",
     "A4",

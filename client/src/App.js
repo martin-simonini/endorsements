@@ -26,6 +26,7 @@ import FlightInstructorAdditionalInfo from "./components/additional_information/
 import SportFlightInstructorAdditionalInfo
     from "./components/additional_information/SportFlightInstructorAdditionalInfo";
 import GroundInstructorAdditionalInfo from "./components/additional_information/GroundInstructorAdditionalInfo";
+import RobinsonAdditionalInfo from "./components/additional_information/RobinsonAdditionalInfo";
 
 class App extends Component {
 
@@ -79,7 +80,9 @@ class App extends Component {
             A44_practical:'_____________________',
             A45_practical:'_____________________',
             sport_CFI_catClass: '_____________________',
-            A48_class: '_____________________'
+            A48_class: '_____________________',
+            certNum: '(Certificate No.)________________________',
+            studentsCFINum: '(CFI number)________________________'
         }
 
     }
@@ -228,6 +231,10 @@ class App extends Component {
                         endorsements={this.state.endorsements}
                     />
                     <GroundInstructorAdditionalInfo
+                        handleChange={this.handleChange}
+                        endorsements={this.state.endorsements}
+                    />
+                    <RobinsonAdditionalInfo
                         handleChange={this.handleChange}
                         endorsements={this.state.endorsements}
                     />
