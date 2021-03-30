@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ca7c9b1-ae6c-45f4-873d-1850cd05a937" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/additional_information/AdditionalEndorsementsAdditionalInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/documents/resources/additional_endorsements.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/AdditionalStudentPilotAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/AdditionalStudentPilotAdditionalInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/FlightInstructorAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/FlightInstructorAdditionalInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/RecreationalPilotAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/RecreationalPilotAdditionalInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/SportFlightInstructorAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/SportFlightInstructorAdditionalInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/SportPilotAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/SportPilotAdditionalInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/additional_information/StudentPilotAdditionalInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/additional_information/StudentPilotAdditionalInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/endorsement_selection/Endorsements.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/endorsement_selection/Endorsements.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/resources/Endorsements_Data.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/resources/Endorsements_Data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/documents/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/documents/resources/additional_student_pilot_endorsements.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/resources/additional_student_pilot_endorsements.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,21 +63,6 @@
       <recent name="C:\Users\User\Desktop\Projects\Endorsements\client\src\components" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -111,7 +96,8 @@
       <workItem from="1616047716167" duration="464000" />
       <workItem from="1616048244270" duration="175000" />
       <workItem from="1616048437967" duration="4975000" />
-      <workItem from="1616291125076" duration="9897000" />
+      <workItem from="1616291125076" duration="19305000" />
+      <workItem from="1617144860319" duration="3127000" />
     </task>
     <task id="LOCAL-00001" summary="rewrote the setEndorsementPool method and added to the more endorsements.">
       <created>1609533432792</created>
@@ -246,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616309233089</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Simplified the additional info selection mechanism.">
+      <created>1616346567046</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1616346567046</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

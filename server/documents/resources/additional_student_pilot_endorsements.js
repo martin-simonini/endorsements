@@ -1,6 +1,6 @@
 const A15 = ({studentName, gender, A15_airspace, A15_airport, A15_limitations, signedDate, cfiNumber, expDate}) => {
     return `
-    <table class="floatLeft">
+    <table>
         <tr>
             <td class="title">
                 Solo flight in Class B, C, and D airspace: § 61.94(a).
@@ -23,7 +23,7 @@ const A15 = ({studentName, gender, A15_airspace, A15_airport, A15_limitations, s
 
 const A16 = ({studentName, gender, A16_airport, A16_limitations, signedDate, cfiNumber, expDate}) => {
     return`
-    <table class="floatLeft">
+    <table>
         <tr>
             <td class="title">
                 Solo flight to, from, or at an airport located in Class B, C, or D airspace or at an airport having an operational control tower: §§ 61.94(a) and 91.131(b)(1). 

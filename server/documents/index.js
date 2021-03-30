@@ -11,7 +11,11 @@ module.exports = ({
                       studentName, gender, cfiNumber, expDate, signedDate, endorsements, generic_info, tsa_info, student_info,
                       sport_makeModel,sport_proficiency_check,sport_categoryClass,sport_knowledge_test, recreational_knowledge_test,
                       A27_airport,recreational_makeModel,A30_date,A30_limitations, A33_practical, A35_practical, instrument_category,
-                      A43_catClass,A44_practical,A45_practical, A48_class, sport_CFI_catClass, A55_type, certNum, studentsCFINum
+                      A43_catClass,A44_practical,A45_practical, A48_class, sport_CFI_catClass, A55_type, certNum, studentsCFINum,
+                      gradeOfCert,wingsLevel,phaseNum,HPmakeModel,complexMakeModel,pressureMakeModel,twMakeModel,A72_categoryClass,
+                      A72_makeModel, A72_limitation, add_training, A73_test,A74_addCatClass, A74_practical,A75_typeRating,
+                      A76_practical, A76_catClass,A77_practical, A78_type, A79_makeModel, A79_type,A80_type,A81_type,A82_test,
+                      A83_type,A84_type,A85_hours, A85_rating
                   }) => {
 
     const generic = require("./resources/generic_endorsements");
@@ -27,6 +31,7 @@ module.exports = ({
     const sport_cfi = require("./resources/sport_flight_instructor_endorsements");
     const ground_instructor = require("./resources/ground_instructor_endorsements");
     const robinson = require("./resources/robinson_endorsements");
+    const additional = require("./resources/additional_endorsements");
 
     //Super ugly. There is a better way but I cant be bothered.
     //TODO: Find a cleaner way to get the student_info data.
@@ -288,6 +293,69 @@ ${Array(getCount(endorsements,"A63")).join(0).split(0).map(()=> `
   `).join('')}
 ${Array(getCount(endorsements,"A64")).join(0).split(0).map(()=> `
     ${endorsements.includes("A64")? robinson.A64({studentName, certNum, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A65")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A65")? additional.A65({studentName, gradeOfCert, certNum, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A66")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A66")? additional.A66({studentName, gradeOfCert, certNum, wingsLevel, phaseNum, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A67")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A67")? additional.A67({studentName, gradeOfCert, certNum, makeModel, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A68")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A68")? additional.A68({studentName,gradeOfCert, certNum, HPmakeModel, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A69")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A69")? additional.A69({studentName, gradeOfCert, certNum, complexMakeModel, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A70")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A70")? additional.A70({studentName, gradeOfCert, certNum, pressureMakeModel, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A71")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A71")? additional.A71({studentName, gradeOfCert, certNum, twMakeModel, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A72")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A72")? additional.A72({studentName, A72_categoryClass, gender, A72_makeModel, A72_limitation, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A73")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A73")? additional.A73({studentName, add_training, gender, A73_test, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A74")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A74")? additional.A74({studentName, gradeOfCert, certNum, A74_addCatClass, gender, A74_practical, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A75")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A75")? additional.A75({studentName, A75_typeRating, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A76")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A76")? additional.A76({studentName, gender, A76_practical, A76_catClass, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A77")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A77")? additional.A77({studentName, A77_practical, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A78")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A78")? additional.A78({studentName, A78_type, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A79")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A79")? additional.A79({studentName, gradeOfCert,  certNum, A79_makeModel, A79_type, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A80")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A80")? additional.A80({studentName, gradeOfCert, certNum, A80_type, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A81")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A81")? additional.A81({studentName, gradeOfCert, certNum,A81_type, gender, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A82")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A82")? additional.A82({studentName, gender, A82_test, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A83")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A83")? additional.A83({studentName, gradeOfCert, certNum, A83_type, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A84")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A84")? additional.A84({studentName, gradeOfCert, certNum, A84_type, signedDate, cfiNumber, expDate}):""}
+  `).join('')}
+${Array(getCount(endorsements,"A85")).join(0).split(0).map(()=> `
+    ${endorsements.includes("A85")? additional.A85({studentName, gender, A85_hours, A85_rating, signedDate, cfiNumber, expDate}):""}
   `).join('')}
 </body>
 </html>

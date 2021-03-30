@@ -122,7 +122,29 @@ export const robinson_endorsements = [
     {name: "Flight review in an R-44 helicopter: SFAR 73, section 2(c)(2) and (3). \n", id: "A64"},
 ]
 
-export const additional_endorsements = []
+export const additional_endorsements = [
+    {name: "Completion of a flight review: § 61.56(a) and (c).", id: "A65"},
+    {name: "Completion of any phase of an FAA-sponsored Pilot Proficiency Program (WINGS): § 61.56(e).", id: "A66"},
+    {name: "Completion of an instrument proficiency check: § 61.57(d)", id: "A67"},
+    {name: "To act as pilot in command in a complex airplane: § 61.31(e). ", id: "A68"},
+    {name: "To act as pilot in command in a high-performance airplane: § 61.31(f)", id: "A69"},
+    {name: "To act as pilot in command in a pressurized aircraft capable of high-altitude operations: § 61.31(g).", id: "A70"},
+    {name: "To act as pilot in command in a tailwheel airplane: § 61.31(i).", id: "A71"},
+    {name: "To act as pilot in command of an aircraft in solo operations when the pilot does not hold an appropriate category/class rating: § 61.31(d)(2).", id: "A72"},
+    {name: "Retesting after failure of a knowledge or practical test: § 61.49.", id: "A73"},
+    {name: "Additional aircraft category or class rating (other than ATP): § 61.63(b) or (c).", id: "A74"},
+    {name: "Type rating only, already holds the appropriate category or class rating (other than ATP): § 61.63(d)(2).", id: "A75"},
+    {name: "Type rating concurrently with an additional category or class rating (other than ATP): § 61.63(d)(2).", id: "A76"},
+    {name: "Type rating only, already holds the appropriate category or class rating (at the ATP level): § 61.157(b)(2).", id: "A77"},
+    {name: "Type rating concurrently with an additional category or class rating (at the ATP level): § 61.157(b)(2).", id: "A78"},
+    {name: "Launch procedures for operating a glider: § 61.31(j).", id: "A79"},
+    {name: "Glider and unpowered ultralight vehicle towing experience: § 61.69(a)(5).", id: "A80"},
+    {name: "Glider and unpowered ultralight vehicle towing ground and flight: § 61.69(a)(3).", id: "A81"},
+    {name: "Review of a home study curriculum: § 61.35(a)(1).", id: "A82"},
+    {name: "Experimental aircraft only—additional aircraft category or class rating (other than ATP): § 61.63(h). ", id: "A83"},
+    {name: "Experimental aircraft only—additional aircraft category or class rating ATP: § 61.65(g). ", id: "A84"},
+    {name: "Aeronautical experience credit—ultralight vehicles: § 61.52", id: "A85"},
+]
 
 export const aircraft_make_and_model = [
     "A3",
@@ -133,7 +155,10 @@ export const aircraft_make_and_model = [
     "A23",
     "A24",
     "A29",
-    "A30"
+    "A30",
+    "A67",
+    "A72",
+    "A79"
 ]
 
 export const airport = [
@@ -151,6 +176,23 @@ export const aircraft_category = [
     "A9",
     "A19",
     "A21",
+    "A72"
+]
+
+export const grade_of_certificate = [
+    "A65",
+    "A66",
+    "A67",
+    "A68",
+    "A69",
+    "A70",
+    "A71",
+    "A74",
+    "A79",
+    "A80",
+    "A81",
+    "A83",
+    "A84",
 ]
 
 export const FULL_PAGE = 12;
